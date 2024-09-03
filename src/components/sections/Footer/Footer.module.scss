@@ -1,0 +1,18 @@
+.footer {
+  background-color: cadetblue;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30dvh;
+  padding: 0 2vw;
+}
+
+.copyright {
+  position: absolute;
+  right: 5%;
+
+  margin-top: 10px;
+}

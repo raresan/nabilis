@@ -1,0 +1,17 @@
+.hero {
+  background-color: blueviolet;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70dvh;
+  padding: 0 2vw;
+}
+
+.social {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
