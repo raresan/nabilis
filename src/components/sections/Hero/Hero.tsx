@@ -6,11 +6,17 @@ import s from '@/components/sections/Hero/Hero.module.scss'
 
 import Social from '@/components/ui/Social'
 
-const Hero = () => {
+import type { IHero } from './HeroTypes'
+
+const Hero = ({ data }: IHero) => {
+  const { title, buttonText } = data
+
   return (
     <>
       <main className={s.hero}>
-        <h1>Banner com vídeo de fundo</h1>
+        <h1>{title}</h1>
+
+        <button>{buttonText}</button>
 
         <aside className={s.social}>
           <Social />

@@ -1,7 +1,5 @@
-// import type { ISanityHomePageHero } from '@/sanity/schemas/singletons/homePage'
-// import type { ISanitySiteSettingsSocial } from '@/sanity/schemas/singletons/siteSettings'
+import type { ISanityHero } from '@/sanity/schemas/singletons/hero'
 
-// export interface IHero {
-//   data: ISanityHomePageHero
-//   social: ISanitySiteSettingsSocial
-// }
+export interface IHero {
+  data: ISanityHero
+}
