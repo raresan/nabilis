@@ -1,5 +1,5 @@
-// import type { ISanityGallery } from '@/sanity/schema/objects/gallery'
+import type { ISanityProject } from '@/sanity/schemas/documents/project'
 
-// export interface IGallery {
-//   data: ISanityGallery
-// }
+export interface IGallery {
+  projects: ISanityProject[]
+}

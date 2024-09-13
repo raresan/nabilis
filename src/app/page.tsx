@@ -11,11 +11,13 @@ import Footer from '@/components/sections/Footer'
 
 import heroQuery from '@/sanity/queries/singletons/hero'
 import aboutQuery from '@/sanity/queries/singletons/about'
+import projectQuery from '@/sanity/queries/documents/project'
 
 export default async function Home() {
-  const [heroData, aboutData] = await Promise.all([
+  const [heroData, aboutData, projectData] = await Promise.all([
     client.fetch(heroQuery),
     client.fetch(aboutQuery),
+    client.fetch(projectQuery),
   ])
 
   return (
@@ -23,7 +25,7 @@ export default async function Home() {
       <Menu />
       <Hero data={heroData} />
       <About data={aboutData} />
-      <Gallery />
+      <Gallery projects={projectData} />
       <Footer />
     </>
   )
