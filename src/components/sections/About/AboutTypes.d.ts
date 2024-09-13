@@ -1,5 +1,5 @@
-// import type { ISanityAbout } from '@/sanity/schema/objects/about'
+import type { ISanityAbout } from '@/sanity/schemas/singletons/about'
 
-// export interface IAbout {
-//   data: ISanityAbout
-// }
+export interface IAbout {
+  data: ISanityAbout
+}

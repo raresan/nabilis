@@ -9,16 +9,20 @@ import About from '@/components/sections/About'
 import Gallery from '@/components/sections/Gallery'
 import Footer from '@/components/sections/Footer'
 
-import heroQuery from '@/sanity/queries/singletons/homePage'
+import heroQuery from '@/sanity/queries/singletons/hero'
+import aboutQuery from '@/sanity/queries/singletons/about'
 
 export default async function Home() {
-  let heroData = await client.fetch(heroQuery)
+  const [heroData, aboutData] = await Promise.all([
+    client.fetch(heroQuery),
+    client.fetch(aboutQuery),
+  ])
 
   return (
     <>
       <Menu />
       <Hero data={heroData} />
-      <About />
+      <About data={aboutData} />
       <Gallery />
       <Footer />
     </>

@@ -9,7 +9,7 @@ import Social from '@/components/ui/Social'
 import type { IHero } from './HeroTypes'
 
 const Hero = ({ data }: IHero) => {
-  const { title, buttonText } = data
+  const { title = 'Título', buttonText = 'Botão' } = data || {}
 
   return (
     <>

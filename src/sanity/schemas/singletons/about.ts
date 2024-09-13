@@ -4,8 +4,8 @@ import { defineField, defineType } from 'sanity'
 import { PageType } from '@/sanity/types/enums'
 
 export default defineType({
-  name: PageType.Hero,
-  title: 'Banner Principal',
+  name: PageType.About,
+  title: 'Sobre Mim',
   type: 'document',
   // icon: MenuIcon,
   fields: [
@@ -18,8 +18,8 @@ export default defineType({
       // validation: (Rule) => Rule.max(7).warning('Deve ter até 7 caracteres'),
     }),
     defineField({
-      name: 'buttonText',
-      title: 'Texto do botão',
+      name: 'content',
+      title: 'Conteúdo',
       type: 'string',
       // placeholder: 'Padrão: Home',
     }),
@@ -31,13 +31,13 @@ export default defineType({
     prepare({ title }) {
       return {
         title,
-        subtitle: 'Título e botão',
+        subtitle: 'Título e conteúdo',
       }
     },
   },
 })
 
-export interface ISanityHero {
+export interface ISanityAbout {
   title: string
-  buttonText: string
+  content: string
 }

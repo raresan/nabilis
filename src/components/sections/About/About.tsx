@@ -4,10 +4,15 @@
 
 import s from '@/components/sections/About/About.module.scss'
 
-const About = () => {
+import type { IAbout } from './AboutTypes'
+
+const About = ({ data }: IAbout) => {
+  const { title = 'Título', content = 'Conteúdo' } = data || {}
+
   return (
     <section className={s.about}>
-      <h2>Sobre mim e estilo de tattoo</h2>
+      <h2>{title}</h2>
+      <p>{content}</p>
     </section>
   )
 }

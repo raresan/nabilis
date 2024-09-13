@@ -14,7 +14,7 @@ import { schema } from '@/sanity/schemaTypes'
 import { structure } from '@/sanity/structure'
 import { PageType } from '@/sanity/types/enums'
 
-const singletonsList: string[] = [PageType.Hero]
+const singletonsList: string[] = [PageType.Hero, PageType.About]
 
 export default defineConfig({
   basePath: '/admin',
