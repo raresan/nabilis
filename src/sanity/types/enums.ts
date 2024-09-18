@@ -1,5 +1,5 @@
 export enum PageType {
-  // SiteSettings = 'siteSettings',
+  SiteSettings = 'siteSettings',
   Hero = 'hero',
   About = 'about',
 

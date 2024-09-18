@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity'
-// import { MenuIcon } from '@sanity/icons'
+import { SparkleIcon } from '@sanity/icons'
 
 import { PageType } from '@/sanity/types/enums'
 
@@ -7,31 +7,23 @@ export default defineType({
   name: PageType.Hero,
   title: 'Banner Principal',
   type: 'document',
-  // icon: MenuIcon,
+  icon: SparkleIcon,
   fields: [
     defineField({
       name: 'title',
       title: 'Título',
       type: 'string',
-      // description:
-      //   'O texto que será exibido no logo do menu em todas as páginas. Máximo: 7 caracteres.',
-      // validation: (Rule) => Rule.max(7).warning('Deve ter até 7 caracteres'),
     }),
     defineField({
       name: 'buttonText',
       title: 'Texto do botão',
       type: 'string',
-      // placeholder: 'Padrão: Home',
     }),
   ],
   preview: {
-    select: {
-      title: 'title',
-    },
-    prepare({ title }) {
+    prepare() {
       return {
-        title,
-        subtitle: 'Título e botão',
+        title: 'Título e botão',
       }
     },
   },
