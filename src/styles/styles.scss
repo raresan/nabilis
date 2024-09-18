@@ -1,0 +1,25 @@
+@import './shared-imports.scss';
+@import './root-variables.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include max-prop(font-size, rem(18), vw(18));
+  color: var(--color-white);
+
+  // font-weight: 300;
+}
+
+// ::-moz-selection {
+//   background: rgba(255, 51, 102, 0.7);
+//   color: var(--color-white-lilac);
+// }
+
+// ::selection {
+//   background: rgba(255, 51, 102, 0.7);
+//   color: var(--color-white-lilac);
+// }
