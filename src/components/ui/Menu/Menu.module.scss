@@ -1,5 +1,7 @@
-.menu {
-  background-color: blue;
+@import '@/styles/shared-imports.scss';
+
+.header {
+  background-color: var(--color-gray);
 
   position: sticky;
   top: 0;
@@ -10,4 +12,27 @@
   justify-content: space-between;
   height: 10dvh;
   padding: 0 2vw;
+}
+
+.logo {
+  @include max-prop(font-size, rem(40), vw(40));
+}
+
+.menu {
+  @include flex-center();
+  @include max-prop(font-size, rem(14), vw(14));
+
+  list-style: none;
+  gap: vw(28);
+  text-transform: uppercase;
+}
+
+.menu__item {
+  @include isHoverable {
+    // cursor: pointer;
+
+    &:hover {
+      color: var(--color-khaki);
+    }
+  }
 }
