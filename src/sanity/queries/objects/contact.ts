@@ -5,7 +5,7 @@ const contactQuery = groq`
     whatsapp,
     instagram,
     mail,
-  },
+  }
 `
 
 export default contactQuery
