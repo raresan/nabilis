@@ -1,7 +1,7 @@
 @import '@/styles/shared-imports.scss';
 
 .header {
-  background-color: var(--color-gray);
+  background-color: var(--color-clay);
 
   position: sticky;
   top: 0;
@@ -28,6 +28,8 @@
 }
 
 .menu__item {
+  transition: color 0.3s ease-out;
+
   @include isHoverable {
     // cursor: pointer;
 

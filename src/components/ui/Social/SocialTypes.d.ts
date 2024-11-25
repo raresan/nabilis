@@ -1,6 +1,6 @@
-import { ISanitySiteSettingsSocial } from '@/sanity/schemas/singletons/siteSettings'
+import type { ISanityContact } from '@/sanity/schemas/objects/contact'
 
 export interface ISocial {
-  data: ISanitySiteSettingsSocial
+  data: ISanityContact
   type?: 'hero' | 'footer'
 }

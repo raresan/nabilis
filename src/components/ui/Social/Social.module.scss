@@ -1,3 +1,5 @@
+@import '@/styles/shared-imports.scss';
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -11,11 +13,28 @@
   margin-top: 10px;
 }
 
-.social__item {
-  background-color: chartreuse;
-  width: 40px;
-  height: 40px;
+.socialItem {
+  background-color: var(--color-khaki);
+  color: var(--color-clay);
+  width: vw(60);
+  height: vw(60);
+  border-radius: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:
+    color 0.3s ease-out,
+    background-color 0.3s ease-out;
+
+  @include isHoverable {
+    &:hover {
+      color: var(--color-khaki);
+      background-color: var(--color-clay);
+    }
+  }
+
+  svg {
+    width: 50%;
+    height: 50%;
+  }
 }

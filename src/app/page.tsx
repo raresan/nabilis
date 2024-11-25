@@ -23,10 +23,10 @@ export default async function Home() {
   return (
     <>
       <Menu />
-      <Hero data={heroData} />
+      <Hero data={heroData} social={siteSettingsData.contact} />
       <About data={aboutData} />
       <Gallery projects={projectData} />
-      <Footer />
+      <Footer social={siteSettingsData.contact} />
     </>
   )
 }

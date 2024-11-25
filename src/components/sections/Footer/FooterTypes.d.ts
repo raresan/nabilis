@@ -1,5 +1,5 @@
-// import type { ISanitySiteSettingsSocial } from '@/sanity/schemas/singletons/siteSettings'
+import type { ISanityContact } from '@/sanity/schemas/objects/contact'
 
-// export interface IFooter {
-//   social: ISanitySiteSettingsSocial
-// }
+export interface IFooter {
+  social: ISanityContact
+}

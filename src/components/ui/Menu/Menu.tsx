@@ -12,23 +12,20 @@ const splash = Splash({ weight: '400', subsets: ['latin'] })
 const Menu = () => {
   return (
     <header className={s.header}>
-      <Link href='/'>
+      <Link href="/">
         <h1 className={clsx(s.logo, splash.className)}>guik.tattoo</h1>
       </Link>
 
       <nav>
         <ul className={clsx(s.menu)}>
           <li className={clsx(s.menu__item)}>
-            <Link href='/'>Home</Link>
+            <Link href="/#about">Sobre Mim</Link>
           </li>
           <li className={clsx(s.menu__item)}>
-            <Link href='/#about'>Sobre Mim</Link>
+            <Link href="/#gallery">Tattoos</Link>
           </li>
           <li className={clsx(s.menu__item)}>
-            <Link href='/#gallery'>Tattoos</Link>
-          </li>
-          <li className={clsx(s.menu__item)}>
-            <Link href='/#contact'>Contato</Link>
+            <Link href="/#contact">Contato</Link>
           </li>
         </ul>
       </nav>

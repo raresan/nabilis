@@ -8,18 +8,24 @@ import Social from '@/components/ui/Social'
 
 import type { IHero } from './HeroTypes'
 
-const Hero = ({ data }: IHero) => {
+const Hero = ({ data, social }: IHero) => {
   const { title = 'Título', buttonText = 'Botão' } = data || {}
 
   return (
     <>
       <main className={s.hero}>
-        <h1>{title}</h1>
+        <video autoPlay loop muted className={s.video}>
+          <source src="/videos/tattoo.mp4" type="video/mp4" />
+        </video>
 
-        <button>{buttonText}</button>
+        <div className={s.content}>
+          <h1 className={s.title}>{title}</h1>
+
+          <button className={s.button}>{buttonText}</button>
+        </div>
 
         <aside className={s.social}>
-          <Social />
+          <Social data={social} />
         </aside>
       </main>
     </>

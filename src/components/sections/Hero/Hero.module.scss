@@ -1,13 +1,54 @@
+@import '@/styles/shared-imports.scss';
+
 .hero {
-  background-color: blueviolet;
-
+  background-color: var(--color-black);
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70dvh;
+  height: 90dvh;
   padding: 0 2vw;
+  overflow: hidden;
+}
+
+.video {
+  @include position-fit;
+
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.content {
+  position: relative;
+  flex-basis: 80%;
+}
+
+.title {
+  @include max-prop(font-size, rem(60), vw(60));
+
+  text-transform: uppercase;
+}
+
+.button {
+  @include max-prop(font-size, rem(20), vw(20));
+
+  background-color: var(--color-khaki);
+  padding: vw(20) vw(40);
+  color: var(--color-clay);
+  text-transform: uppercase;
+  margin-top: vw(30);
+  transition:
+    color 0.3s ease-out,
+    background-color 0.3s ease-out;
+
+  @include isHoverable {
+    &:hover {
+      color: var(--color-khaki);
+      background-color: var(--color-clay);
+    }
+  }
 }
 
 .social {
