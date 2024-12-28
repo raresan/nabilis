@@ -5,12 +5,16 @@
   flex-direction: column;
 }
 
+.title {
+  @include max-prop(font-size, rem(16), vw(16));
+}
+
 .social {
   display: flex;
-  gap: 10px;
+  gap: vw(10);
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: vw(16);
 }
 
 .socialItem {

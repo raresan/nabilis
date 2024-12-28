@@ -9,8 +9,9 @@ import Social from '@/components/ui/Social'
 const Footer = ({ social }: IFooter) => {
   return (
     <footer className={s.footer}>
-      <Social />
-      <p className={s.copyright}>© 2024 guik.tattoo</p>
+      <Social data={social} />
+
+      <p className={s.copyright}>© 2025 guik.tattoo</p>
     </footer>
   )
 }

@@ -1,20 +1,14 @@
 @import '@/styles/shared-imports.scss';
 
 .footer {
-  background-color: cadetblue;
-
-  position: relative;
-
-  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 30dvh;
-  padding: 0 2vw;
+  background-color: var(--color-gray);
+  display: flex;
+  justify-content: space-between;
+  padding: vw(50) 2vw;
+  position: relative;
 }
 
 .copyright {
-  position: absolute;
-  right: 5%;
-
-  margin-top: 10px;
+  @include max-prop(font-size, rem(20), vw(20));
 }
