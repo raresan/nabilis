@@ -7,7 +7,7 @@ import { Splash } from 'next/font/google'
 
 import s from '@/components/ui/Menu/Menu.module.scss'
 
-const splash = Splash({ weight: '400', subsets: ['latin'] })
+const splash = Splash({ weight: '400', subsets: ['latin'], display: 'swap' })
 
 const Menu = () => {
   return (

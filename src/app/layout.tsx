@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import 'wipe.css'
 import '@/styles/styles.scss'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'guik.tattoo',
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='pt-br'>
+    <html lang="pt-br">
       <body className={inter.className}>{children}</body>
     </html>
   )

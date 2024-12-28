@@ -12,14 +12,16 @@ const Gallery = ({ projects }: IGallery) => {
       <h2>Galeria de tattoos</h2>
 
       <div className={s.grid}>
-        {projects?.map(({ title = 'Titulo', description = 'Descrição' }) => {
-          return (
-            <div className={s.grid__item}>
-              {title}
-              {description}
-            </div>
-          )
-        })}
+        {projects?.map(
+          ({ title = 'Titulo', description = 'Descrição' }, index) => {
+            return (
+              <div key={index} className={s.grid__item}>
+                {title}
+                {description}
+              </div>
+            )
+          },
+        )}
       </div>
     </section>
   )
