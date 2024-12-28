@@ -1,11 +1,31 @@
 @import '@/styles/shared-imports.scss';
 
 .about {
-  background-color: brown;
-
-  display: flex;
   align-items: center;
+  background-color: var(--color-khaki);
+  color: var(--color-clay);
+  display: flex;
   justify-content: center;
-  height: 70dvh;
-  padding: 0 2vw;
+  min-height: 70dvh;
+  max-height: 100dvh;
+}
+
+.text {
+  padding: 0 vw(100);
+  width: 50%;
+}
+
+.title {
+  @include max-prop(font-size, rem(60), vw(60));
+}
+
+.content {
+  @include max-prop(font-size, rem(20), vw(20));
+
+  margin-top: vw(30);
+  line-height: 1.5;
+}
+
+.image {
+  width: 50%;
 }

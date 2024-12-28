@@ -1,7 +1,9 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType, ImageRule } from 'sanity'
 import { UserIcon } from '@sanity/icons'
 
 import { PageType } from '@/sanity/types/enums'
+import { ISanityImage } from '@/sanity/types/image'
+import { imageField } from '@/sanity/lib/fields'
 
 export default defineType({
   name: PageType.About,
@@ -19,6 +21,11 @@ export default defineType({
       title: 'Conteúdo',
       type: 'text',
     }),
+    imageField({
+      name: 'photo',
+      title: 'Foto',
+      validation: (Rule: ImageRule) => Rule.required(),
+    }),
   ],
   preview: {
     prepare() {
@@ -32,4 +39,5 @@ export default defineType({
 export interface ISanityAbout {
   title: string
   content: string
+  photo: ISanityImage
 }
