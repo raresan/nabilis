@@ -1,21 +1,27 @@
 @import '@/styles/shared-imports.scss';
 
 .header {
+  align-items: center;
   background-color: var(--color-clay);
-
+  display: flex;
+  height: 10dvh;
+  justify-content: space-between;
+  padding: 0 2vw;
   position: sticky;
   top: 0;
   z-index: z('menu');
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 10dvh;
-  padding: 0 2vw;
 }
 
 .logo {
   @include max-prop(font-size, rem(40), vw(40));
+
+  transition: color 0.3s ease-out;
+
+  @include isHoverable {
+    &:hover {
+      color: var(--color-khaki);
+    }
+  }
 }
 
 .menu {
@@ -27,12 +33,10 @@
   text-transform: uppercase;
 }
 
-.menu__item {
+.menuItem {
   transition: color 0.3s ease-out;
 
   @include isHoverable {
-    // cursor: pointer;
-
     &:hover {
       color: var(--color-khaki);
     }

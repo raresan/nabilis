@@ -14,7 +14,11 @@ const Social = ({ data }: ISocial) => {
 
       <div className={s.social}>
         {whatsapp && (
-          <a href={whatsapp} className={s.socialItem} target="_blank">
+          <a
+            href={`https://wa.me/${whatsapp}`}
+            className={s.socialItem}
+            target="_blank"
+          >
             <FaWhatsapp />
           </a>
         )}
@@ -26,7 +30,7 @@ const Social = ({ data }: ISocial) => {
         )}
 
         {mail && (
-          <a href={mail} className={s.socialItem} target="_blank">
+          <a href={`mailto:${mail}`} className={s.socialItem} target="_blank">
             <MdOutlineMailOutline />
           </a>
         )}

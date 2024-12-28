@@ -18,13 +18,15 @@ const Menu = () => {
 
       <nav>
         <ul className={clsx(s.menu)}>
-          <li className={clsx(s.menu__item)}>
+          <li className={clsx(s.menuItem)}>
             <Link href="/#about">Sobre Mim</Link>
           </li>
-          <li className={clsx(s.menu__item)}>
+
+          <li className={clsx(s.menuItem)}>
             <Link href="/#gallery">Tattoos</Link>
           </li>
-          <li className={clsx(s.menu__item)}>
+
+          <li className={clsx(s.menuItem)}>
             <Link href="/#contact">Contato</Link>
           </li>
         </ul>
