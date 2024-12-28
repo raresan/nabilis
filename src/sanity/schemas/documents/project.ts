@@ -1,10 +1,11 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType, ImageRule } from 'sanity'
 import { EditIcon } from '@sanity/icons'
 
 import { PageType } from '@/sanity/types/enums'
 
 import type { ISanityImage } from '@/sanity/types/image'
 import type { ISanityMedia } from '@/sanity/schemas/objects/media'
+import { imageField } from '@/sanity/lib/fields'
 
 export default defineType({
   name: PageType.Project,
@@ -24,18 +25,16 @@ export default defineType({
       type: 'text',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
+    imageField({
       name: 'thumbnail',
       title: 'Miniatura',
-      type: 'image',
-      // validation: (Rule) => Rule.required(),
+      validation: (Rule: ImageRule) => Rule.required(),
     }),
     defineField({
       name: 'media',
       title: 'Mídia',
       type: 'array',
       of: [{ type: 'media' }],
-      // validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

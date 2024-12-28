@@ -40,6 +40,18 @@ export default defineType({
       hidden: ({ parent }) => parent?.type !== 'video',
     }),
   ],
+  preview: {
+    select: {
+      alt: 'image.alt',
+      type: 'type',
+      image: 'image',
+    },
+    prepare: ({ alt, type, image }) => ({
+      title: alt,
+      subtitle: type,
+      media: image,
+    }),
+  },
 })
 
 export interface ISanityMediaVideo {

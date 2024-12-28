@@ -16,8 +16,13 @@ const About = ({ data }: IAbout) => {
         <p className={s.content}>{content}</p>
       </div>
 
-      <div className={s.image}>
-        <NextImage image={photo} alt={photo?.alt || ''} fill />
+      <div className={s.imageWrapper}>
+        <NextImage
+          image={photo}
+          alt={photo?.alt || ''}
+          fill
+          className={s.image}
+        />
       </div>
     </section>
   )

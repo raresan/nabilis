@@ -1,27 +1,18 @@
-// import clsx from 'clsx'
-
-// import type { IGallery } from '@/components/sections/Gallery/GalleryTypes'
-
-import s from '@/components/sections/Gallery/Gallery.module.scss'
+import Project from './Project'
 
 import type { IGallery } from './GalleryTypes'
+
+import s from './Gallery.module.scss'
 
 const Gallery = ({ projects }: IGallery) => {
   return (
     <section className={s.gallery}>
-      <h2>Galeria de tattoos</h2>
+      <h2 className={s.title}>Galeria de tattoos</h2>
 
       <div className={s.grid}>
-        {projects?.map(
-          ({ title = 'Titulo', description = 'Descrição' }, index) => {
-            return (
-              <div key={index} className={s.grid__item}>
-                {title}
-                {description}
-              </div>
-            )
-          },
-        )}
+        {projects?.map((project, index) => (
+          <Project key={index} {...project} />
+        ))}
       </div>
     </section>
   )

@@ -1,27 +1,24 @@
 @import '@/styles/shared-imports.scss';
 
 .gallery {
-  background-color: burlywood;
-
+  background-color: var(--color-kabul);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 120dvh;
-  padding: 0 2vw;
+  padding: vw(200) 2vw vw(160);
+}
+
+.title {
+  @include max-prop(font-size, rem(60), vw(60));
+
+  color: var(--color-white);
 }
 
 .grid {
-  margin-top: 5dvh;
   display: grid;
-  grid-template-columns: repeat(3, 200px);
-  grid-auto-rows: 200px;
-  grid-gap: 1vw;
-}
-
-.grid__item {
-  background-color: chocolate;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-gap: vw(30);
+  grid-template-columns: repeat(3, 1fr);
+  margin: vw(60) auto 0;
+  max-width: 80%;
 }
