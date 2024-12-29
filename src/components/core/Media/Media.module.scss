@@ -1,0 +1,19 @@
+@import '@/styles/shared-imports.scss';
+
+.image {
+  // @include max-prop(border-radius, rem(3), vw(3));
+
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  // overflow: hidden;
+  width: 100%;
+
+  // @include above('desktop') {
+  //   @include max-prop(border-radius, rem(5), vw(5));
+  // }
+}
+
+.video {
+  width: 100%;
+}

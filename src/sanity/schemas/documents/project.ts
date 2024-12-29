@@ -53,5 +53,5 @@ export interface ISanityProject {
   title: string
   description: string
   thumbnail: ISanityImage
-  media: ISanityMedia
+  media: ISanityMedia[]
 }

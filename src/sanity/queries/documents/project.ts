@@ -10,7 +10,7 @@ const projectQuery = groq`
     title,
     description,
     ${imageQuery('thumbnail')},
-    ${mediaQuery('media')},
+    ${mediaQuery('media[]')},
   }[]
 `
 
