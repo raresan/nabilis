@@ -7,19 +7,16 @@ import Social from '@/components/ui/Social'
 import type { IHero } from './HeroTypes'
 
 import s from './Hero.module.scss'
+import useScrollToSection from '@/hooks/useScrollToSection'
 
 const Hero = ({ data, social }: IHero) => {
   const { title = 'Título', buttonText = 'Botão' } = data || {}
+  const { scrollToSection } = useScrollToSection()
 
-  const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-
     const target = event.currentTarget.href.split('#')[1]
-    const element = document.getElementById(target)
-
-    console.log(target, element)
-
-    element?.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(target)
   }
 
   return (
@@ -31,7 +28,7 @@ const Hero = ({ data, social }: IHero) => {
       <div className={s.content}>
         <h1 className={s.title}>{title}</h1>
 
-        <Link href="/#tattoos" className={s.link} onClick={onClick}>
+        <Link href="/#tattoos" className={s.link} onClick={handleClick}>
           {buttonText}
         </Link>
       </div>

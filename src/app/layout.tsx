@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
+import { MenuProvider } from '@/contexts/MenuContext'
+
 import 'wipe.css'
 import '@/styles/styles.scss'
 
@@ -18,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <MenuProvider>{children}</MenuProvider>
+      </body>
     </html>
   )
 }

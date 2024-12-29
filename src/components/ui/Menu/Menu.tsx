@@ -4,30 +4,30 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { Splash } from 'next/font/google'
 
+import useScrollToSection from '@/hooks/useScrollToSection'
+import { useMenuContext } from '@/contexts/MenuContext'
+
 import s from './Menu.module.scss'
 
 const splash = Splash({ weight: '400', subsets: ['latin'], display: 'swap' })
 
 const Menu = () => {
+  const { menuRef } = useMenuContext()
+  const { scrollToSection } = useScrollToSection()
+
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-
     const target = event.currentTarget.href.split('#')[1]
-    const element = document.getElementById(target)
-
-    console.log(target, element)
-
-    element?.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(target)
   }
 
   const onClickLogo = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
-
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
-    <header className={s.header}>
+    <header ref={menuRef} className={s.header}>
       <Link href="/" onClick={onClickLogo}>
         <h1 className={clsx(s.logo, splash.className)}>guik.tattoo</h1>
       </Link>
