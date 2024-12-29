@@ -53,6 +53,7 @@
   top: vw(30);
   width: vw(50);
   transition: transform 0.3s ease-in-out;
+  z-index: z('above');
 
   @include isHoverable {
     &:hover {
@@ -62,8 +63,8 @@
 }
 
 .closeIcon {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .text {
@@ -85,7 +86,11 @@
 
 .mediaWrapper {
   height: 50dvh;
+  overflow: hidden;
+  width: 100%;
+
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .media {
@@ -94,15 +99,49 @@
   flex-wrap: wrap;
   gap: vw(30);
   height: 100%;
-  overflow-x: auto;
   padding: 0 vw(80);
+
+  @media (hover: hover) {
+    cursor: grab;
+  }
+
+  @media (hover: none) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }
 
 .mediaItem {
   height: 100%;
 
+  @media (hover: none) {
+    scroll-snap-align: start;
+  }
+
   img,
   video {
     height: 100%;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
   }
 }
