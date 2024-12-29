@@ -38,7 +38,7 @@
   text-transform: uppercase;
 }
 
-.button {
+.link {
   @include max-prop(font-size, rem(16), vw(20));
 
   background-color: var(--color-khaki);

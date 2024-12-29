@@ -2,13 +2,13 @@ import NextImage from '@/components/core/NextImage'
 
 import type { IAbout } from './AboutTypes'
 
-import s from '@/components/sections/About/About.module.scss'
+import s from './About.module.scss'
 
 const About = ({ data }: IAbout) => {
   const { title = 'Título', content = 'Conteúdo', photo } = data || {}
 
   return (
-    <section className={s.about}>
+    <section className={s.about} id="sobre-mim">
       <div className={s.text}>
         <h2 className={s.title}>{title}</h2>
         <p className={s.content}>{content}</p>

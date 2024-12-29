@@ -3,7 +3,7 @@ import { MdOutlineMailOutline } from 'react-icons/md'
 
 import type { ISocial } from '@/components/ui/Social/SocialTypes'
 
-import s from '@/components/ui/Social/Social.module.scss'
+import s from './Social.module.scss'
 
 const Social = ({ data }: ISocial) => {
   const { whatsapp, instagram, mail } = data || {}
