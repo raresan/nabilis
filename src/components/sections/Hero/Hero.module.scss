@@ -1,14 +1,18 @@
 @import '@/styles/shared-imports.scss';
 
 .hero {
-  background-color: var(--color-black);
-  position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: var(--color-black);
+  display: flex;
   height: 90dvh;
-  padding: 0 2vw;
   overflow: hidden;
+  padding: 0 rem(16);
+  position: relative;
+
+  @include above('desktop') {
+    padding: 0 2vw;
+    justify-content: center;
+  }
 }
 
 .video {
@@ -22,24 +26,27 @@
 
 .content {
   position: relative;
-  flex-basis: 80%;
+
+  @include above('desktop') {
+    flex-basis: 60%;
+  }
 }
 
 .title {
-  @include max-prop(font-size, rem(60), vw(60));
+  @include max-prop(font-size, rem(48), vw(60));
 
   text-transform: uppercase;
 }
 
 .button {
-  @include max-prop(font-size, rem(20), vw(20));
+  @include max-prop(font-size, rem(16), vw(20));
 
   background-color: var(--color-khaki);
-  padding: vw(20) vw(40);
+  padding: rem(12) rem(24);
   color: var(--color-clay);
   text-transform: uppercase;
-  margin-top: vw(30);
-  border-radius: vw(5);
+  margin-top: rem(16);
+  border-radius: rem(3);
   transition:
     color 0.3s ease-out,
     background-color 0.3s ease-out;
@@ -49,6 +56,12 @@
       color: var(--color-khaki);
       background-color: var(--color-clay);
     }
+  }
+
+  @include above('desktop') {
+    border-radius: vw(5);
+    margin-top: vw(30);
+    padding: vw(20) vw(40);
   }
 }
 

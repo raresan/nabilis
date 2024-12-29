@@ -7,8 +7,6 @@ import s from '@/components/sections/About/About.module.scss'
 const About = ({ data }: IAbout) => {
   const { title = 'Título', content = 'Conteúdo', photo } = data || {}
 
-  console.log(photo)
-
   return (
     <section className={s.about}>
       <div className={s.text}>

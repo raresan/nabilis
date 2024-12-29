@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: vw(5);
+  border-radius: rem(3);
   overflow: hidden;
 
   &:before {
@@ -12,6 +12,10 @@
     content: '';
     inset: 0;
     position: absolute;
+  }
+
+  @include above('desktop') {
+    border-radius: vw(5);
   }
 }
 
@@ -28,10 +32,14 @@
 
 .title {
   @include position-center;
-  @include max-prop(font-size, rem(30), vw(30));
+  @include max-prop(font-size, rem(20), vw(30));
 
+  padding: 0 rem(16);
   text-transform: uppercase;
-  z-index: z('above');
   width: 100%;
-  padding: 0 vw(30);
+  z-index: z('above');
+
+  @include above('desktop') {
+    padding: 0 vw(30);
+  }
 }

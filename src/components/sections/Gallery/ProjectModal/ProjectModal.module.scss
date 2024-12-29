@@ -32,26 +32,36 @@
 .container {
   position: relative;
   background-color: var(--color-pearl);
-  border-radius: vw(5);
+  border-radius: rem(3);
   color: var(--color-clay);
-  height: 80dvh;
-  width: 80%;
+  height: 88dvh;
+  width: calc(100% - rem(32));
   z-index: z('above');
+
+  @include above('desktop') {
+    border-radius: vw(5);
+    height: 80dvh;
+    width: 80%;
+  }
 }
 
 .content {
   height: 100%;
   overflow: auto;
-  padding-bottom: vw(80);
+  padding-bottom: rem(40);
   width: 100%;
+
+  @include above('desktop') {
+    padding-bottom: vw(80);
+  }
 }
 
 .close {
-  height: vw(50);
+  height: rem(28);
   position: absolute;
-  right: vw(30);
-  top: vw(30);
-  width: vw(50);
+  right: rem(16);
+  top: rem(16);
+  width: rem(28);
   transition: transform 0.3s ease-in-out;
   z-index: z('above');
 
@@ -59,6 +69,13 @@
     &:hover {
       transform: rotate(90deg);
     }
+  }
+
+  @include above('desktop') {
+    height: vw(50);
+    right: vw(30);
+    top: vw(30);
+    width: vw(50);
   }
 }
 
@@ -68,20 +85,27 @@
 }
 
 .text {
-  padding: vw(80) vw(80) vw(40);
+  padding: rem(40) rem(40) rem(30);
+
+  @include above('desktop') {
+    padding: vw(80) vw(80) vw(40);
+  }
 }
 
 .title {
-  @include max-prop(font-size, rem(32), vw(32));
+  @include max-prop(font-size, rem(28), vw(32));
 }
 
 .description {
-  @include max-prop(font-size, rem(20), vw(20));
+  @include max-prop(font-size, rem(16), vw(20));
 
-  font-size: vw(20);
   line-height: 1.5;
-  margin-top: vw(30);
-  width: 80%;
+  margin-top: rem(16);
+
+  @include above('desktop') {
+    margin-top: vw(30);
+    width: 80%;
+  }
 }
 
 .mediaWrapper {
@@ -97,9 +121,14 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: vw(30);
+  gap: rem(16);
   height: 100%;
-  padding: 0 vw(80);
+  padding: 0 rem(40);
+
+  @include above('desktop') {
+    gap: vw(30);
+    padding: 0 vw(80);
+  }
 
   @media (hover: hover) {
     cursor: grab;

@@ -6,19 +6,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: vw(200) 2vw vw(160);
+  padding: rem(50) rem(16) rem(16);
+
+  @include above('desktop') {
+    padding: vw(200) 2vw vw(160);
+  }
 }
 
 .title {
-  @include max-prop(font-size, rem(60), vw(60));
+  @include max-prop(font-size, rem(48), vw(60));
 
   color: var(--color-white);
 }
 
 .grid {
   display: grid;
-  grid-gap: vw(30);
-  grid-template-columns: repeat(3, 1fr);
-  margin: vw(60) auto 0;
-  max-width: 80%;
+  grid-template-columns: 1fr;
+  grid-gap: rem(16);
+  margin: rem(30) auto 0;
+  width: 100%;
+
+  @include above('desktop') {
+    grid-gap: vw(30);
+    grid-template-columns: repeat(3, 1fr);
+    margin: vw(60) auto 0;
+    max-width: 80%;
+  }
 }

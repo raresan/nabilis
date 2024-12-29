@@ -5,10 +5,14 @@
   background-color: var(--color-gray);
   display: flex;
   justify-content: space-between;
-  padding: vw(50) 2vw;
+  padding: rem(32) rem(16);
   position: relative;
+
+  @include above('desktop') {
+    padding: vw(50) 2vw;
+  }
 }
 
 .copyright {
-  @include max-prop(font-size, rem(20), vw(20));
+  @include max-prop(font-size, rem(16), vw(20));
 }

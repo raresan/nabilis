@@ -6,14 +6,18 @@
   display: flex;
   height: 10dvh;
   justify-content: space-between;
-  padding: 0 2vw;
+  padding: 0 rem(16);
   position: sticky;
   top: 0;
   z-index: z('menu');
+
+  @include above('desktop') {
+    padding: 0 2vw;
+  }
 }
 
 .logo {
-  @include max-prop(font-size, rem(40), vw(40));
+  @include max-prop(font-size, rem(20), vw(40));
 
   transition: color 0.3s ease-out;
 
@@ -26,11 +30,15 @@
 
 .menu {
   @include flex-center();
-  @include max-prop(font-size, rem(14), vw(14));
+  @include max-prop(font-size, rem(11), vw(14));
 
   list-style: none;
-  gap: vw(28);
+  gap: rem(12);
   text-transform: uppercase;
+
+  @include above('desktop') {
+    gap: vw(28);
+  }
 }
 
 .menuItem {

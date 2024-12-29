@@ -6,22 +6,27 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(16), vw(16));
+  @include max-prop(font-size, rem(14), vw(16));
 }
 
 .social {
   display: flex;
-  gap: vw(10);
+  gap: rem(6);
   align-items: center;
   justify-content: center;
-  margin-top: vw(16);
+  margin-top: rem(8);
+
+  @include above('desktop') {
+    gap: vw(10);
+    margin-top: vw(16);
+  }
 }
 
 .socialItem {
   background-color: var(--color-khaki);
   color: var(--color-clay);
-  width: vw(60);
-  height: vw(60);
+  width: rem(40);
+  height: rem(40);
   border-radius: 40%;
   display: flex;
   align-items: center;
@@ -35,6 +40,11 @@
       color: var(--color-khaki);
       background-color: var(--color-clay);
     }
+  }
+
+  @include above('desktop') {
+    width: vw(60);
+    height: vw(60);
   }
 
   svg {
