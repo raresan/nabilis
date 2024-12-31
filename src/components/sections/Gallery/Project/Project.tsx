@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 
 import { scaleUp } from '@/motion/animations'
 import NextImage from '@/components/core/NextImage'
+import Grain from '@/components/ui/Grain'
 import ProjectModal from '../ProjectModal'
 
 import type { IProject } from './ProjectTypes'
@@ -39,6 +40,8 @@ const Project = ({
         variants={scaleUp({ scale: 0.91, delay: animationDelay })}
         viewport={{ once: true }}
       >
+        <Grain opacity={0.25} />
+
         <div className={s.imageWrapper}>
           <NextImage
             image={thumbnail}

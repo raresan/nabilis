@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 
 import NextImage from '@/components/core/NextImage'
+import Grain from '@/components/ui/Grain'
 
 import { fadeUp } from '@/motion/animations'
 
@@ -16,6 +17,8 @@ const About = ({ data }: IAbout) => {
   return (
     <section className={s.about} id="sobre-mim">
       <div className={s.text}>
+        <Grain opacity={0.1} />
+
         <motion.h2
           className={s.title}
           initial="hidden"
