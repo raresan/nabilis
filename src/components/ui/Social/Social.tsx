@@ -6,6 +6,7 @@ import { motion } from 'motion/react'
 
 import type { ISocial } from '@/components/ui/Social/SocialTypes'
 import { fadeUp, scaleUp } from '@/motion/animations'
+import Swap from '@/components/ui/Swap'
 
 import s from './Social.module.scss'
 
@@ -35,7 +36,9 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             variants={scaleUp({ delay: animationDelay + 0.2 })}
             viewport={{ once: true }}
           >
-            <FaWhatsapp />
+            <Swap>
+              <FaWhatsapp />
+            </Swap>
           </motion.a>
         )}
 
@@ -49,7 +52,9 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             variants={scaleUp({ delay: animationDelay + 0.4 })}
             viewport={{ once: true }}
           >
-            <FaInstagram />
+            <Swap>
+              <FaInstagram />
+            </Swap>
           </motion.a>
         )}
 
@@ -63,7 +68,9 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             variants={scaleUp({ delay: animationDelay + 0.6 })}
             viewport={{ once: true }}
           >
-            <MdOutlineMailOutline />
+            <Swap>
+              <MdOutlineMailOutline />
+            </Swap>
           </motion.a>
         )}
       </div>

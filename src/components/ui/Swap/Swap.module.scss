@@ -1,0 +1,47 @@
+@import '@/styles/shared-imports.scss';
+
+.swap {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.2s ease-out;
+
+  @include isHoverable {
+    .swap:hover & {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.topText {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+  transform: skewY(0deg);
+
+  @include isHoverable {
+    .swap:hover & {
+      transform: translateY(-60%) skewY(-15deg);
+    }
+  }
+}
+
+.bottomText {
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  transition: transform 0.3s ease-out;
+  transform: translateY(60%) skewY(15deg);
+
+  @include isHoverable {
+    .swap:hover & {
+      transform: skewY(0deg);
+    }
+  }
+}

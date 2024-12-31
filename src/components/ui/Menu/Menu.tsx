@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import useScrollToSection from '@/hooks/useScrollToSection'
 import { useMenuContext } from '@/contexts/MenuContext'
+import Swap from '@/components/ui/Swap'
 
 import s from './Menu.module.scss'
 
@@ -33,19 +34,19 @@ const Menu = () => {
         <ul className={clsx(s.menu)}>
           <li className={clsx(s.menuItem)}>
             <Link href="/#sobre-mim" onClick={onClick}>
-              Sobre Mim
+              <Swap>Sobre Mim</Swap>
             </Link>
           </li>
 
           <li className={clsx(s.menuItem)}>
             <Link href="/#tattoos" onClick={onClick}>
-              Tattoos
+              <Swap>Tattoos</Swap>
             </Link>
           </li>
 
           <li className={clsx(s.menuItem)}>
             <Link href="/#contato" onClick={onClick}>
-              Contato
+              <Swap>Contato</Swap>
             </Link>
           </li>
         </ul>

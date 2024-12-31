@@ -42,7 +42,6 @@
   @include max-prop(font-size, rem(16), vw(20));
 
   background-color: var(--color-khaki);
-  padding: rem(12) rem(24);
   color: var(--color-clay);
   text-transform: uppercase;
   margin-top: rem(16);
@@ -51,6 +50,11 @@
     color 0.3s ease-out,
     background-color 0.3s ease-out;
 
+  @include above('desktop') {
+    border-radius: vw(5);
+    margin-top: vw(30);
+  }
+
   @include isHoverable {
     &:hover {
       color: var(--color-khaki);
@@ -58,10 +62,12 @@
     }
   }
 
-  @include above('desktop') {
-    border-radius: vw(5);
-    margin-top: vw(30);
-    padding: vw(20) vw(40);
+  > span > span > span {
+    padding: rem(12) rem(24);
+
+    @include above('desktop') {
+      padding: vw(20) vw(40);
+    }
   }
 }
 

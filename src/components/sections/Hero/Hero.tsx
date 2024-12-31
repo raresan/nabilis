@@ -6,6 +6,7 @@ import { motion } from 'motion/react'
 import Social from '@/components/ui/Social'
 import useScrollToSection from '@/hooks/useScrollToSection'
 import { fadeUp } from '@/motion/animations'
+import Swap from '@/components/ui/Swap'
 
 import type { IHero } from './HeroTypes'
 
@@ -45,7 +46,7 @@ const Hero = ({ data, social }: IHero) => {
           viewport={{ once: true }}
         >
           <Link href="/#tattoos" className={s.link} onClick={handleClick}>
-            {buttonText}
+            <Swap absolute>{buttonText}</Swap>
           </Link>
         </motion.div>
       </div>

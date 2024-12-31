@@ -13,6 +13,7 @@
 }
 
 .text {
+  position: relative;
   padding: rem(50) rem(16);
 
   @include above('desktop') {
@@ -28,11 +29,13 @@
   @include max-prop(font-size, rem(48), vw(60));
 
   font-family: var(--font-splash);
+  position: relative;
 }
 
 .content {
   @include max-prop(font-size, rem(16), vw(20));
 
+  position: relative;
   margin-top: rem(16);
   line-height: 1.5;
 

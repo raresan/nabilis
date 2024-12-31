@@ -47,6 +47,13 @@
     height: vw(60);
   }
 
+  span {
+    @include flex-center;
+
+    height: 100%;
+    width: 100%;
+  }
+
   svg {
     width: 50%;
     height: 50%;
