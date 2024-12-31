@@ -1,7 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'motion/react'
 
+import { scaleUp } from '@/motion/animations'
 import NextImage from '@/components/core/NextImage'
 import ProjectModal from '../ProjectModal'
 
@@ -14,6 +16,7 @@ const Project = ({
   description = 'Descrição',
   thumbnail,
   media,
+  animationDelay = 0,
 }: IProject) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -27,10 +30,14 @@ const Project = ({
 
   return (
     <>
-      <button
+      <motion.button
         type="button"
         className={s.project}
         onClick={() => setIsModalOpen(true)}
+        initial="hidden"
+        whileInView="visible"
+        variants={scaleUp({ scale: 0.91, delay: animationDelay })}
+        viewport={{ once: true }}
       >
         <div className={s.imageWrapper}>
           <NextImage
@@ -42,7 +49,7 @@ const Project = ({
         </div>
 
         <h3 className={s.title}>{title}</h3>
-      </button>
+      </motion.button>
 
       <ProjectModal
         isOpen={isModalOpen}

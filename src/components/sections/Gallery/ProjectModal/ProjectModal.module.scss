@@ -30,11 +30,12 @@
 }
 
 .container {
-  position: relative;
   background-color: var(--color-pearl);
   border-radius: rem(3);
   color: var(--color-clay);
   height: 88dvh;
+  overflow: hidden;
+  position: relative;
   width: calc(100% - rem(32));
   z-index: z('above');
 

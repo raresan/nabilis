@@ -1,13 +1,15 @@
 'use client'
 
 import Link from 'next/link'
+import { motion } from 'motion/react'
 
 import Social from '@/components/ui/Social'
+import useScrollToSection from '@/hooks/useScrollToSection'
+import { fadeUp } from '@/motion/animations'
 
 import type { IHero } from './HeroTypes'
 
 import s from './Hero.module.scss'
-import useScrollToSection from '@/hooks/useScrollToSection'
 
 const Hero = ({ data, social }: IHero) => {
   const { title = 'Título', buttonText = 'Botão' } = data || {}
@@ -26,15 +28,30 @@ const Hero = ({ data, social }: IHero) => {
       </video>
 
       <div className={s.content}>
-        <h1 className={s.title}>{title}</h1>
+        <motion.h1
+          className={s.title}
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp()}
+          viewport={{ once: true }}
+        >
+          {title}
+        </motion.h1>
 
-        <Link href="/#tattoos" className={s.link} onClick={handleClick}>
-          {buttonText}
-        </Link>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp({ delay: 0.2 })}
+          viewport={{ once: true }}
+        >
+          <Link href="/#tattoos" className={s.link} onClick={handleClick}>
+            {buttonText}
+          </Link>
+        </motion.div>
       </div>
 
       <aside className={s.social}>
-        <Social data={social} />
+        <Social data={social} animationDelay={0.5} />
       </aside>
     </main>
   )

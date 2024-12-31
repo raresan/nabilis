@@ -1,4 +1,10 @@
+'use client'
+
+import { motion } from 'motion/react'
+
 import NextImage from '@/components/core/NextImage'
+
+import { fadeUp } from '@/motion/animations'
 
 import type { IAbout } from './AboutTypes'
 
@@ -10,8 +16,25 @@ const About = ({ data }: IAbout) => {
   return (
     <section className={s.about} id="sobre-mim">
       <div className={s.text}>
-        <h2 className={s.title}>{title}</h2>
-        <p className={s.content}>{content}</p>
+        <motion.h2
+          className={s.title}
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp()}
+          viewport={{ once: true }}
+        >
+          {title}
+        </motion.h2>
+
+        <motion.p
+          className={s.content}
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeUp({ delay: 0.4, y: '0%' })}
+          viewport={{ once: true }}
+        >
+          {content}
+        </motion.p>
       </div>
 
       <div className={s.imageWrapper}>

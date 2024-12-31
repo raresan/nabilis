@@ -1,11 +1,15 @@
-import { motion, useMotionValue, animate } from 'framer-motion'
-import clsx from 'clsx'
 import { FaTimes } from 'react-icons/fa'
+import { motion, useMotionValue, animate } from 'motion/react'
 import { useEffect, useRef } from 'react'
+import clsx from 'clsx'
+
 import useIsTouchDevice from '@/hooks/useIsTouchDevice'
 import Media from '@/components/core/Media'
+
 import type { IProjectModal } from './ProjectModalTypes'
+
 import s from './ProjectModal.module.scss'
+import { fadeUp } from '@/motion/animations'
 
 const ProjectModal = ({
   title = 'Titulo',
@@ -56,8 +60,23 @@ const ProjectModal = ({
 
         <div className={s.content}>
           <div className={s.text}>
-            <h1 className={s.title}>{title}</h1>
-            <p className={s.description}>{description}</p>
+            <motion.h1
+              className={s.title}
+              initial="hidden"
+              animate={isOpen ? 'visible' : 'hidden'}
+              variants={fadeUp()}
+            >
+              {title}
+            </motion.h1>
+
+            <motion.p
+              className={s.description}
+              initial="hidden"
+              animate={isOpen ? 'visible' : 'hidden'}
+              variants={fadeUp({ delay: 0.4, y: '0%' })}
+            >
+              {description}
+            </motion.p>
           </div>
 
           <div className={s.mediaWrapper} ref={mediaWrapperRef}>
@@ -74,16 +93,17 @@ const ProjectModal = ({
                 whileDrag: { cursor: 'grabbing' },
               })}
             >
-              {[...Array(6)].map(() =>
-                media?.map((item, index) => (
-                  <div
-                    key={`${index}-${Math.random()}`}
-                    className={s.mediaItem}
-                  >
-                    <Media data={item} />
-                  </div>
-                )),
-              )}
+              {media?.map((item, index) => (
+                <motion.div
+                  key={`${index}-${Math.random()}`}
+                  className={s.mediaItem}
+                  initial="hidden"
+                  animate={isOpen ? 'visible' : 'hidden'}
+                  variants={fadeUp({ y: '15%', delay: 0.8 + index * 0.1 })}
+                >
+                  <Media data={item} />
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>

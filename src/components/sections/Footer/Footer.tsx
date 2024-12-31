@@ -1,6 +1,9 @@
-// import clsx from 'clsx'
+'use client'
+
+import { motion } from 'motion/react'
 
 import type { IFooter } from '@/components/sections/Footer/FooterTypes'
+import { fadeUp } from '@/motion/animations'
 
 import s from './Footer.module.scss'
 
@@ -11,7 +14,15 @@ const Footer = ({ social }: IFooter) => {
     <footer className={s.footer} id="contato">
       <Social data={social} />
 
-      <p className={s.copyright}>© 2025 guik.tattoo</p>
+      <motion.p
+        className={s.copyright}
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeUp()}
+        viewport={{ once: true }}
+      >
+        © 2025 guik.tattoo
+      </motion.p>
     </footer>
   )
 }

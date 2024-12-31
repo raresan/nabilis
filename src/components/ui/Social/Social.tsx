@@ -1,38 +1,70 @@
+'use client'
+
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { MdOutlineMailOutline } from 'react-icons/md'
+import { motion } from 'motion/react'
 
 import type { ISocial } from '@/components/ui/Social/SocialTypes'
+import { fadeUp, scaleUp } from '@/motion/animations'
 
 import s from './Social.module.scss'
 
-const Social = ({ data }: ISocial) => {
+const Social = ({ data, animationDelay = 0 }: ISocial) => {
   const { whatsapp, instagram, mail } = data || {}
 
   return (
     <div className={s.wrapper}>
-      <h2 className={s.title}>Faça seu orçamento</h2>
+      <motion.h2
+        className={s.title}
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeUp({ delay: animationDelay })}
+        viewport={{ once: true }}
+      >
+        Faça seu orçamento
+      </motion.h2>
 
       <div className={s.social}>
         {whatsapp && (
-          <a
+          <motion.a
             href={`https://wa.me/${whatsapp}`}
             className={s.socialItem}
             target="_blank"
+            initial="hidden"
+            whileInView="visible"
+            variants={scaleUp(animationDelay + 0.2)}
+            viewport={{ once: true }}
           >
             <FaWhatsapp />
-          </a>
+          </motion.a>
         )}
 
         {instagram && (
-          <a href={instagram} className={s.socialItem} target="_blank">
+          <motion.a
+            href={instagram}
+            className={s.socialItem}
+            target="_blank"
+            initial="hidden"
+            whileInView="visible"
+            variants={scaleUp(animationDelay + 0.4)}
+            viewport={{ once: true }}
+          >
             <FaInstagram />
-          </a>
+          </motion.a>
         )}
 
         {mail && (
-          <a href={`mailto:${mail}`} className={s.socialItem} target="_blank">
+          <motion.a
+            href={`mailto:${mail}`}
+            className={s.socialItem}
+            target="_blank"
+            initial="hidden"
+            whileInView="visible"
+            variants={scaleUp(animationDelay + 0.6)}
+            viewport={{ once: true }}
+          >
             <MdOutlineMailOutline />
-          </a>
+          </motion.a>
         )}
       </div>
     </div>
