@@ -17,6 +17,7 @@
   @include max-prop(font-size, rem(48), vw(60));
 
   color: var(--color-white);
+  font-family: var(--font-splash);
 }
 
 .grid {

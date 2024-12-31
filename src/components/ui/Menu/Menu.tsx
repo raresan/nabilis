@@ -2,14 +2,11 @@
 
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Splash } from 'next/font/google'
 
 import useScrollToSection from '@/hooks/useScrollToSection'
 import { useMenuContext } from '@/contexts/MenuContext'
 
 import s from './Menu.module.scss'
-
-const splash = Splash({ weight: '400', subsets: ['latin'], display: 'swap' })
 
 const Menu = () => {
   const { menuRef } = useMenuContext()
@@ -29,7 +26,7 @@ const Menu = () => {
   return (
     <header ref={menuRef} className={s.header}>
       <Link href="/" onClick={onClickLogo}>
-        <h1 className={clsx(s.logo, splash.className)}>guik.tattoo</h1>
+        <h1 className={clsx(s.logo)}>guik.tattoo</h1>
       </Link>
 
       <nav>

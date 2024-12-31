@@ -95,6 +95,8 @@
 
 .title {
   @include max-prop(font-size, rem(28), vw(32));
+
+  font-family: var(--font-splash);
 }
 
 .description {

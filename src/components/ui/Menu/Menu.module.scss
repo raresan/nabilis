@@ -19,6 +19,7 @@
 .logo {
   @include max-prop(font-size, rem(20), vw(40));
 
+  font-family: var(--font-splash);
   transition: color 0.3s ease-out;
 
   @include isHoverable {

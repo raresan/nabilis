@@ -32,7 +32,7 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             target="_blank"
             initial="hidden"
             whileInView="visible"
-            variants={scaleUp(animationDelay + 0.2)}
+            variants={scaleUp({ delay: animationDelay + 0.2 })}
             viewport={{ once: true }}
           >
             <FaWhatsapp />
@@ -46,7 +46,7 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             target="_blank"
             initial="hidden"
             whileInView="visible"
-            variants={scaleUp(animationDelay + 0.4)}
+            variants={scaleUp({ delay: animationDelay + 0.4 })}
             viewport={{ once: true }}
           >
             <FaInstagram />
@@ -60,7 +60,7 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
             target="_blank"
             initial="hidden"
             whileInView="visible"
-            variants={scaleUp(animationDelay + 0.6)}
+            variants={scaleUp({ delay: animationDelay + 0.6 })}
             viewport={{ once: true }}
           >
             <MdOutlineMailOutline />

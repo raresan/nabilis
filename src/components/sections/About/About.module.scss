@@ -26,6 +26,8 @@
 
 .title {
   @include max-prop(font-size, rem(48), vw(60));
+
+  font-family: var(--font-splash);
 }
 
 .content {
