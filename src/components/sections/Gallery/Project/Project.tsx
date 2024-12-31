@@ -52,6 +52,8 @@ const Project = ({
         </div>
 
         <h3 className={s.title}>{title}</h3>
+
+        <span className={s.info}>Clique para ver detalhes</span>
       </motion.button>
 
       <ProjectModal

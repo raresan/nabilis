@@ -7,15 +7,28 @@
   border-radius: rem(3);
   overflow: hidden;
 
-  &:before {
-    background-color: rgba($color: var(--color-gray--rgb), $alpha: 0.6);
-    content: '';
-    inset: 0;
-    position: absolute;
-  }
-
   @include above('desktop') {
     border-radius: vw(5);
+  }
+
+  &:before {
+    background-color: var(--color-gray);
+    content: '';
+    inset: 0;
+    opacity: 0.5;
+    position: absolute;
+    transition: opacity 0.15s ease-out;
+  }
+
+  @include isHoverable {
+    &:hover div:first-of-type {
+      opacity: 0 !important;
+    }
+
+    &:hover::before {
+      opacity: 0;
+      transition-duration: 0.3s;
+    }
   }
 }
 
@@ -38,8 +51,44 @@
   text-transform: uppercase;
   width: 100%;
   z-index: z('above');
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
 
   @include above('desktop') {
     padding: 0 vw(30);
+  }
+
+  @include isHoverable {
+    .project:hover & {
+      opacity: 0;
+      transform: translate(-50%, -100%);
+    }
+  }
+}
+
+.info {
+  @include isHoverable {
+    @include max-prop(font-size, rem(14), vw(16));
+
+    background-color: rgba(var(--color-black--rgb), 0.5);
+    border-radius: vw(3);
+    bottom: 5%;
+    left: 50%;
+    opacity: 0;
+    padding: 0 vw(5);
+    pointer-events: none;
+    position: absolute;
+    transform: translate(-50%, 20%);
+    max-width: 90%;
+    width: max-content;
+    transition:
+      opacity 0.3s ease-out,
+      transform 0.3s ease-out;
+
+    .project:hover & {
+      opacity: 1;
+      transform: translate(-50%, 0%);
+    }
   }
 }
