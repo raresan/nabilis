@@ -62,6 +62,7 @@ const Project = ({
         title={title}
         description={description}
         media={media}
+        thumbnail={thumbnail}
       />
     </>
   )

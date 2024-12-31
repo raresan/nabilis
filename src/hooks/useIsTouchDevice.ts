@@ -9,7 +9,7 @@ const useIsTouchDevice = () => {
     const checkTouch = () => {
       const hasTouch = Boolean(
         'ontouchstart' in window ||
-          (window.DocumentTouch && document instanceof DocumentTouch) ||
+          (window.DocumentTouch && document instanceof window.DocumentTouch) ||
           navigator.maxTouchPoints > 0 ||
           // @ts-ignore - IE/Edge
           navigator.msMaxTouchPoints > 0 ||
