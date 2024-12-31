@@ -25,6 +25,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   grid-gap: rem(16);
   margin: rem(30) auto 0;
   width: 100%;
