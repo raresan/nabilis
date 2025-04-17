@@ -25,14 +25,14 @@ const Hero = ({ data, social }: IHero) => {
   return (
     <main className={s.hero}>
       <video autoPlay loop muted className={s.video}>
-        <source src="/videos/tattoo.mp4" type="video/mp4" />
+        <source src='/videos/stars.mp4' type='video/mp4' />
       </video>
 
       <div className={s.content}>
         <motion.h1
           className={s.title}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           variants={fadeUp()}
           viewport={{ once: true }}
         >
@@ -40,12 +40,12 @@ const Hero = ({ data, social }: IHero) => {
         </motion.h1>
 
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           variants={fadeUp({ delay: 0.2 })}
           viewport={{ once: true }}
         >
-          <Link href="/#tattoos" className={s.link} onClick={handleClick}>
+          <Link href='/#tattoos' className={s.link} onClick={handleClick}>
             <Swap absolute>{buttonText}</Swap>
           </Link>
         </motion.div>

@@ -9,6 +9,8 @@ import Swap from '@/components/ui/Swap'
 
 import s from './Menu.module.scss'
 
+import NextImage from '@/components/core/NextImage'
+
 const Menu = () => {
   const { menuRef } = useMenuContext()
   const { scrollToSection } = useScrollToSection()
@@ -26,26 +28,28 @@ const Menu = () => {
 
   return (
     <header ref={menuRef} className={s.header}>
-      <Link href="/" onClick={onClickLogo}>
-        <h1 className={clsx(s.logo)}>guik.tattoo</h1>
+      <Link href='/' onClick={onClickLogo}>
+        {/* <h1 className={clsx(s.logo)}>guik.tattoo</h1> */}
+
+        <img src='/images/arcade-nabilis-logo.png' />
       </Link>
 
       <nav>
         <ul className={clsx(s.menu)}>
           <li className={clsx(s.menuItem)}>
-            <Link href="/#sobre-mim" onClick={onClick}>
+            <Link href='/#sobre-mim' onClick={onClick}>
               <Swap>Sobre Mim</Swap>
             </Link>
           </li>
 
           <li className={clsx(s.menuItem)}>
-            <Link href="/#tattoos" onClick={onClick}>
+            <Link href='/#tattoos' onClick={onClick}>
               <Swap>Tattoos</Swap>
             </Link>
           </li>
 
           <li className={clsx(s.menuItem)}>
-            <Link href="/#contato" onClick={onClick}>
+            <Link href='/#contato' onClick={onClick}>
               <Swap>Contato</Swap>
             </Link>
           </li>
