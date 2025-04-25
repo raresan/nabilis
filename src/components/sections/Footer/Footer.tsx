@@ -11,17 +11,17 @@ import Social from '@/components/ui/Social'
 
 const Footer = ({ social }: IFooter) => {
   return (
-    <footer className={s.footer} id="contato">
+    <footer className={s.footer} id='contato'>
       <Social data={social} />
 
       <motion.p
         className={s.copyright}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         variants={fadeUp()}
         viewport={{ once: true }}
       >
-        © 2025 guik.tattoo
+        © 2025 Nabilis - Portfólio de Thainá Alonso
       </motion.p>
     </footer>
   )

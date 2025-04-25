@@ -2,31 +2,33 @@
 
 .header {
   align-items: center;
-  background-color: var(--color-clay);
+  background-color: var(--color-gray);
   display: flex;
   height: 10dvh;
   justify-content: space-between;
-  padding: 0 rem(16);
+  padding: rem(16);
   position: sticky;
   top: 0;
   z-index: z('menu');
 
   @include above('desktop') {
-    padding: 0 2vw;
+    padding: vw(15) 2vw;
   }
 }
 
 .logo {
-  @include max-prop(font-size, rem(20), vw(40));
-
-  font-family: var(--font-splash);
-  transition: color 0.3s ease-out;
+  height: 100%;
+  transition: filter 0.3s ease-in-out;
 
   @include isHoverable {
     &:hover {
-      color: var(--color-khaki);
+      filter: brightness(0.5);
     }
   }
+}
+
+.logoImage {
+  height: 100%;
 }
 
 .menu {

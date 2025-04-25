@@ -9,8 +9,6 @@ import Swap from '@/components/ui/Swap'
 
 import s from './Menu.module.scss'
 
-import NextImage from '@/components/core/NextImage'
-
 const Menu = () => {
   const { menuRef } = useMenuContext()
   const { scrollToSection } = useScrollToSection()
@@ -28,10 +26,9 @@ const Menu = () => {
 
   return (
     <header ref={menuRef} className={s.header}>
-      <Link href='/' onClick={onClickLogo}>
-        {/* <h1 className={clsx(s.logo)}>guik.tattoo</h1> */}
-
-        <img src='/images/arcade-nabilis-logo.png' />
+      <Link href='/' onClick={onClickLogo} className={s.logo}>
+        {/* TODO ver se a tag img eh a melhor nesse caso */}
+        <img src='/images/arcade-nabilis-logo.png' className={s.logoImage} />
       </Link>
 
       <nav>
@@ -43,8 +40,8 @@ const Menu = () => {
           </li>
 
           <li className={clsx(s.menuItem)}>
-            <Link href='/#tattoos' onClick={onClick}>
-              <Swap>Tattoos</Swap>
+            <Link href='/#portfolio' onClick={onClick}>
+              <Swap>Portfólio</Swap>
             </Link>
           </li>
 

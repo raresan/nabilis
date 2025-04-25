@@ -15,15 +15,15 @@ const Gallery = ({ projects }: IGallery) => {
   const isDesktop = useBreakpoint('desktop', 'above')
 
   return (
-    <section className={s.gallery} id="tattoos">
+    <section className={s.gallery} id='portfolio'>
       <motion.h2
         className={s.title}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         variants={fadeUp()}
         viewport={{ once: true }}
       >
-        Galeria de tattoos
+        Portfólio
       </motion.h2>
 
       <div className={s.grid}>

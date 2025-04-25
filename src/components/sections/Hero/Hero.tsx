@@ -45,7 +45,7 @@ const Hero = ({ data, social }: IHero) => {
           variants={fadeUp({ delay: 0.2 })}
           viewport={{ once: true }}
         >
-          <Link href='/#tattoos' className={s.link} onClick={handleClick}>
+          <Link href='/#portfolio' className={s.link} onClick={handleClick}>
             <Swap absolute>{buttonText}</Swap>
           </Link>
         </motion.div>

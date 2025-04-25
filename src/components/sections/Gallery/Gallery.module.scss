@@ -1,8 +1,7 @@
 @import '@/styles/shared-imports.scss';
 
 .gallery {
-  background: var(--color-kabul) url('/images/dot-texture.png') repeat center
-    center / 25%;
+  background: var(--color-clay);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +10,7 @@
 
   @include above('desktop') {
     padding: vw(200) 2vw vw(160);
-    background-size: 10%;
+    // background-size: 10%;
   }
 }
 

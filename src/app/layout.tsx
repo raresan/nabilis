@@ -20,8 +20,8 @@ const splash = Splash({
 })
 
 export const metadata: Metadata = {
-  title: 'guik.tattoo',
-  description: 'Tatuagens Geek',
+  title: 'Nabilis',
+  description: 'Thainá Alonso Portfólio',
 }
 
 export default function RootLayout({
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-br" className={`${inter.variable} ${splash.variable}`}>
+    <html lang='pt-br' className={`${inter.variable} ${splash.variable}`}>
       <body className={inter.className}>
         <MenuProvider>{children}</MenuProvider>
       </body>
