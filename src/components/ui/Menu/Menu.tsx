@@ -44,12 +44,6 @@ const Menu = () => {
               <Swap>Portfólio</Swap>
             </Link>
           </li>
-
-          <li className={clsx(s.menuItem)}>
-            <Link href='/#contato' onClick={onClick}>
-              <Swap>Contato</Swap>
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>

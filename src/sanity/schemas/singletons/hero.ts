@@ -15,6 +15,11 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'subtitle',
+      title: 'Subtítulo',
+      type: 'string',
+    }),
+    defineField({
       name: 'buttonText',
       title: 'Texto do botão',
       type: 'string',
@@ -23,7 +28,7 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: 'Título e botão',
+        title: 'Título, subtítulo e botão',
       }
     },
   },
@@ -31,5 +36,6 @@ export default defineType({
 
 export interface ISanityHero {
   title: string
+  subtitle: string
   buttonText: string
 }

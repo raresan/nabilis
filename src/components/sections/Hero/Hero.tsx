@@ -13,7 +13,11 @@ import type { IHero } from './HeroTypes'
 import s from './Hero.module.scss'
 
 const Hero = ({ data, social }: IHero) => {
-  const { title = 'Título', buttonText = 'Botão' } = data || {}
+  const {
+    title = 'Título',
+    subtitle = 'Subtítulo',
+    buttonText = 'Botão',
+  } = data || {}
   const { scrollToSection } = useScrollToSection()
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -39,10 +43,20 @@ const Hero = ({ data, social }: IHero) => {
           {title}
         </motion.h1>
 
-        <motion.div
+        <motion.h2
+          className={s.subtitle}
           initial='hidden'
           whileInView='visible'
           variants={fadeUp({ delay: 0.2 })}
+          viewport={{ once: true }}
+        >
+          {subtitle}
+        </motion.h2>
+
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          variants={fadeUp({ delay: 0.4 })}
           viewport={{ once: true }}
         >
           <Link href='/#portfolio' className={s.link} onClick={handleClick}>

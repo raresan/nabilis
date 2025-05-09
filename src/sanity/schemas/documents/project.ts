@@ -9,7 +9,7 @@ import { imageField } from '@/sanity/lib/fields'
 
 export default defineType({
   name: PageType.Project,
-  title: 'Tattoos',
+  title: 'Projetos',
   type: 'document',
   icon: EditIcon,
   fields: [

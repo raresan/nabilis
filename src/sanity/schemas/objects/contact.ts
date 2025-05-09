@@ -14,8 +14,8 @@ export default defineType({
       validation: (Rule) => Rule.required().regex(/^\d{1,4}\d{1,12}$/),
     }),
     defineField({
-      name: 'instagram',
-      title: 'Instagram',
+      name: 'behance',
+      title: 'Behance',
       type: 'url',
     }),
     defineField({
@@ -28,6 +28,6 @@ export default defineType({
 
 export interface ISanityContact {
   whatsapp: string
-  instagram?: string
+  behance?: string
   mail?: string
 }

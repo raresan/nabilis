@@ -38,6 +38,13 @@
   text-transform: uppercase;
 }
 
+.subtitle {
+  @include max-prop(font-size, rem(24), vw(30));
+
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .link {
   @include max-prop(font-size, rem(16), vw(20));
 

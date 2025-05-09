@@ -20,7 +20,7 @@ const splash = Splash({
 })
 
 export const metadata: Metadata = {
-  title: 'Nabilis',
+  title: 'Thainá Alonso Portfólio',
   description: 'Thainá Alonso Portfólio',
 }
 

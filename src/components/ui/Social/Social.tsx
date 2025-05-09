@@ -1,6 +1,6 @@
 'use client'
 
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
+import { FaBehance, FaWhatsapp } from 'react-icons/fa'
 import { MdOutlineMailOutline } from 'react-icons/md'
 import { motion } from 'motion/react'
 
@@ -11,18 +11,18 @@ import Swap from '@/components/ui/Swap'
 import s from './Social.module.scss'
 
 const Social = ({ data, animationDelay = 0 }: ISocial) => {
-  const { whatsapp, instagram, mail } = data || {}
+  const { whatsapp, behance, mail } = data || {}
 
   return (
     <div className={s.wrapper}>
       <motion.h2
         className={s.title}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         variants={fadeUp({ delay: animationDelay })}
         viewport={{ once: true }}
       >
-        Faça seu orçamento
+        Entre em contato
       </motion.h2>
 
       <div className={s.social}>
@@ -30,9 +30,9 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
           <motion.a
             href={`https://wa.me/${whatsapp}`}
             className={s.socialItem}
-            target="_blank"
-            initial="hidden"
-            whileInView="visible"
+            target='_blank'
+            initial='hidden'
+            whileInView='visible'
             variants={scaleUp({ delay: animationDelay + 0.2 })}
             viewport={{ once: true }}
           >
@@ -42,18 +42,18 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
           </motion.a>
         )}
 
-        {instagram && (
+        {behance && (
           <motion.a
-            href={instagram}
+            href={behance}
             className={s.socialItem}
-            target="_blank"
-            initial="hidden"
-            whileInView="visible"
+            target='_blank'
+            initial='hidden'
+            whileInView='visible'
             variants={scaleUp({ delay: animationDelay + 0.4 })}
             viewport={{ once: true }}
           >
             <Swap>
-              <FaInstagram />
+              <FaBehance />
             </Swap>
           </motion.a>
         )}
@@ -62,9 +62,9 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
           <motion.a
             href={`mailto:${mail}`}
             className={s.socialItem}
-            target="_blank"
-            initial="hidden"
-            whileInView="visible"
+            target='_blank'
+            initial='hidden'
+            whileInView='visible'
             variants={scaleUp({ delay: animationDelay + 0.6 })}
             viewport={{ once: true }}
           >
