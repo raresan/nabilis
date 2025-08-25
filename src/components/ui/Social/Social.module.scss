@@ -1,12 +1,13 @@
 @import '@/styles/shared-imports.scss';
 
 .wrapper {
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  gap: vw(18);
 }
 
 .title {
-  @include max-prop(font-size, rem(14), vw(16));
+  // @include max-prop(font-size, rem(14), vw(16));
 }
 
 .social {
@@ -14,11 +15,9 @@
   gap: rem(6);
   align-items: center;
   justify-content: center;
-  margin-top: rem(8);
 
   @include above('desktop') {
     gap: vw(10);
-    margin-top: vw(16);
   }
 }
 

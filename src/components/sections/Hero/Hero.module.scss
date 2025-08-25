@@ -8,6 +8,7 @@
   overflow: hidden;
   padding: 0 rem(16);
   position: relative;
+  text-align: center;
 
   @include above('desktop') {
     padding: 0 2vw;
@@ -35,37 +36,35 @@
 .title {
   @include max-prop(font-size, rem(48), vw(60));
 
+  color: var(--color-pink);
   text-transform: uppercase;
 }
 
 .subtitle {
   @include max-prop(font-size, rem(24), vw(30));
 
-  text-transform: uppercase;
   font-weight: bold;
 }
 
 .link {
   @include max-prop(font-size, rem(16), vw(20));
 
-  background-color: var(--color-khaki);
-  color: var(--color-clay);
-  text-transform: uppercase;
+  background-color: var(--color-pink);
+  border-radius: rem(100);
+  color: var(--color-white);
   margin-top: rem(16);
-  border-radius: rem(3);
   transition:
     color 0.3s ease-out,
     background-color 0.3s ease-out;
 
   @include above('desktop') {
-    border-radius: vw(5);
     margin-top: vw(30);
   }
 
   @include isHoverable {
     &:hover {
-      color: var(--color-khaki);
-      background-color: var(--color-clay);
+      color: var(--color-gray);
+      background-color: var(--color-yellow);
     }
   }
 
@@ -76,10 +75,4 @@
       padding: vw(20) vw(40);
     }
   }
-}
-
-.social {
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
 }

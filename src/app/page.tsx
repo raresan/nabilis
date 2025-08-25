@@ -22,11 +22,11 @@ export default async function Home() {
 
   return (
     <>
-      <Menu />
-      <Hero data={heroData} social={siteSettingsData.contact} />
+      <Menu social={siteSettingsData.contact} />
+      <Hero data={heroData} />
       <About data={aboutData} />
       <Gallery projects={projectData} />
-      <Footer social={siteSettingsData.contact} />
+      <Footer />
     </>
   )
 }

@@ -3,16 +3,17 @@
 import Link from 'next/link'
 import { motion } from 'motion/react'
 
-import Social from '@/components/ui/Social'
 import useScrollToSection from '@/hooks/useScrollToSection'
+
 import { fadeUp } from '@/motion/animations'
+
 import Swap from '@/components/ui/Swap'
 
 import type { IHero } from './HeroTypes'
 
 import s from './Hero.module.scss'
 
-const Hero = ({ data, social }: IHero) => {
+const Hero = ({ data }: IHero) => {
   const {
     title = 'Título',
     subtitle = 'Subtítulo',
@@ -27,11 +28,7 @@ const Hero = ({ data, social }: IHero) => {
   }
 
   return (
-    <main className={s.hero}>
-      <video autoPlay loop muted className={s.video}>
-        <source src='/videos/stars.mp4' type='video/mp4' />
-      </video>
-
+    <main className={s.hero} id='home'>
       <div className={s.content}>
         <motion.h1
           className={s.title}
@@ -64,10 +61,6 @@ const Hero = ({ data, social }: IHero) => {
           </Link>
         </motion.div>
       </div>
-
-      <aside className={s.social}>
-        <Social data={social} animationDelay={0.5} />
-      </aside>
     </main>
   )
 }

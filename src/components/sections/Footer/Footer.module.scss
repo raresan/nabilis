@@ -1,10 +1,7 @@
 @import '@/styles/shared-imports.scss';
 
 .footer {
-  align-items: center;
-  background-color: var(--color-gray);
-  display: flex;
-  justify-content: space-between;
+  background-color: var(--color-gray2);
   padding: rem(32) rem(16);
   position: relative;
 
