@@ -17,8 +17,6 @@ const About = ({ data }: IAbout) => {
   return (
     <section className={s.about} id="sobre-mim">
       <div className={s.text}>
-        <Grain opacity={0.1} />
-
         <motion.h2
           className={s.title}
           initial="hidden"

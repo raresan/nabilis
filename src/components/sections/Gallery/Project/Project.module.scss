@@ -45,10 +45,10 @@
 
 .title {
   @include position-center;
-  @include max-prop(font-size, rem(20), vw(30));
+  @include max-prop(font-size, rem(20), vw(40));
 
+  font-family: var(--font-aristotelica-display-trial);
   padding: 0 rem(16);
-  text-transform: uppercase;
   width: 100%;
   z-index: z('above');
   transition:

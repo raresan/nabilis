@@ -16,7 +16,6 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
   return (
     <div className={s.wrapper}>
       <motion.h2
-        className={s.title}
         initial='hidden'
         whileInView='visible'
         variants={fadeUp({ delay: animationDelay })}

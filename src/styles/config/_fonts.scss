@@ -1,0 +1,19 @@
+$fontsFolder: '../../assets/fonts';
+
+@font-face {
+  font-family: 'Aristotelica Display Trial';
+  src: url('#{$fontsFolder}/aristotelica-display-trial-demibold.woff2') format('woff2'),
+    url('#{$fontsFolder}/aristotelica-display-trial-demibold.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Chubby';
+  src: url('#{$fontsFolder}/chubby.woff2') format('woff2'),
+    url('#{$fontsFolder}/chubby.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}

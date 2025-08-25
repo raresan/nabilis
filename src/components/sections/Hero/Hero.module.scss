@@ -34,24 +34,26 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(48), vw(60));
+  @include max-prop(font-size, rem(48), vw(110));
 
   color: var(--color-pink);
+  font-family: var(--font-chubby);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .subtitle {
-  @include max-prop(font-size, rem(24), vw(30));
+  @include max-prop(font-size, rem(24), vw(48));
 
-  font-weight: bold;
+  font-family: var(--font-aristotelica-display-trial);
 }
 
 .link {
-  @include max-prop(font-size, rem(16), vw(20));
-
   background-color: var(--color-pink);
   border-radius: rem(100);
   color: var(--color-white);
+  font-family: var(--font-aristotelica-display-trial);
+  font-size: 0;
   margin-top: rem(16);
   transition:
     color 0.3s ease-out,
@@ -63,16 +65,18 @@
 
   @include isHoverable {
     &:hover {
-      color: var(--color-gray);
+      color: var(--color-blue);
       background-color: var(--color-yellow);
     }
   }
 
   > span > span > span {
+    @include max-prop(font-size, rem(16), vw(38));
+
     padding: rem(12) rem(24);
 
     @include above('desktop') {
-      padding: vw(20) vw(40);
+      padding: vw(25) vw(66) vw(20);
     }
   }
 }

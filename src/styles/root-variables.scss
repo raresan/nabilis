@@ -17,4 +17,7 @@
     --color-#{$key}: #{$value};
     --color-#{$key}--rgb: #{hexToRgb($value)};
   }
+
+  --font-aristotelica-display-trial: 'Aristotelica Display Trial';
+  --font-chubby: 'Chubby';
 }

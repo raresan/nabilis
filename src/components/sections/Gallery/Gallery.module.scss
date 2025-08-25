@@ -15,10 +15,9 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(48), vw(60));
+  @include max-prop(font-size, rem(48), vw(110));
 
-  color: var(--color-white);
-  font-family: var(--font-splash);
+  font-family: var(--font-aristotelica-display-trial);
 }
 
 .grid {

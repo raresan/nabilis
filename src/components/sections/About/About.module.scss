@@ -1,8 +1,8 @@
 @import '@/styles/shared-imports.scss';
 
 .about {
-  background-color: var(--color-khaki);
-  color: var(--color-clay);
+  background-color: var(--color-white);
+  color: var(--color-blue);
 
   @include above('desktop') {
     align-items: stretch;
@@ -26,18 +26,19 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(48), vw(60));
+  @include max-prop(font-size, rem(48), vw(110));
 
-  font-family: var(--font-splash);
+  color: var(--color-pink);
+  font-family: var(--font-aristotelica-display-trial);
   position: relative;
 }
 
 .content {
-  @include max-prop(font-size, rem(16), vw(20));
+  @include max-prop(font-size, rem(16), vw(32));
 
-  position: relative;
+  line-height: 1.2;
   margin-top: rem(16);
-  line-height: 1.5;
+  position: relative;
 
   @include above('desktop') {
     margin-top: vw(30);

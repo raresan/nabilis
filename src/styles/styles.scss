@@ -1,3 +1,4 @@
+@import './config/fonts';
 @import './shared-imports.scss';
 @import './root-variables.scss';
 
@@ -21,36 +22,38 @@ html {
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--color-clay);
+    background: var(--color-pink);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-pearl);
+    background: var(--color-blue);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-clay);
+    background: var(--color-pink);
     opacity: 0.8;
   }
 
   // Firefox scrollbar
-  scrollbar-color: var(--color-clay) var(--color-pearl);
+  scrollbar-color: var(--color-pink) var(--color-blue);
   scrollbar-width: thin;
 
   // Selection
   ::-moz-selection {
-    background: var(--color-clay);
-    color: var(--color-pearl);
+    background: var(--color-yellow);
+    color: var(--color-blue);
   }
 
   ::selection {
-    background: var(--color-clay);
-    color: var(--color-pearl);
+    background: var(--color-yellow);
+    color: var(--color-blue);
   }
 }
 
 body {
   @include max-prop(font-size, rem(18), vw(18));
+
+  font-weight: 300;
   color: var(--color-white);
 }

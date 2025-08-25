@@ -40,8 +40,6 @@ const Project = ({
         variants={scaleUp({ scale: 0.91, delay: animationDelay })}
         viewport={{ once: true }}
       >
-        <Grain opacity={0.25} />
-
         <div className={s.imageWrapper}>
           <NextImage
             image={thumbnail}

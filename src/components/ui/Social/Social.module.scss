@@ -6,10 +6,6 @@
   gap: vw(18);
 }
 
-.title {
-  // @include max-prop(font-size, rem(14), vw(16));
-}
-
 .social {
   display: flex;
   gap: rem(6);
@@ -22,28 +18,28 @@
 }
 
 .socialItem {
-  background-color: var(--color-khaki);
-  color: var(--color-clay);
-  width: rem(40);
-  height: rem(40);
-  border-radius: 40%;
-  display: flex;
   align-items: center;
+  background-color: var(--color-pink);
+  border-radius: 40%;
+  color: var(--color-white);
+  display: flex;
+  height: rem(40);
   justify-content: center;
+  width: rem(40);
   transition:
     color 0.3s ease-out,
     background-color 0.3s ease-out;
 
   @include isHoverable {
     &:hover {
-      color: var(--color-khaki);
-      background-color: var(--color-clay);
+      color: var(--color-blue);
+      background-color: var(--color-yellow);
     }
   }
 
   @include above('desktop') {
-    width: vw(60);
     height: vw(60);
+    width: vw(60);
   }
 
   span {
@@ -54,7 +50,7 @@
   }
 
   svg {
-    width: 50%;
     height: 50%;
+    width: 50%;
   }
 }

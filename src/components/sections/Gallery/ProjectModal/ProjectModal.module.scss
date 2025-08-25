@@ -30,9 +30,9 @@
 }
 
 .container {
-  background-color: var(--color-khaki);
+  background-color: var(--color-white);
   border-radius: rem(3);
-  color: var(--color-clay);
+  color: var(--color-blue);
   height: 88dvh;
   overflow: hidden;
   position: relative;
@@ -94,15 +94,17 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(28), vw(32));
+  @include max-prop(font-size, rem(48), vw(110));
 
-  font-family: var(--font-splash);
+  color: var(--color-pink);
+  font-family: var(--font-aristotelica-display-trial);
+  text-align: center;
 }
 
 .description {
-  @include max-prop(font-size, rem(16), vw(20));
+  @include max-prop(font-size, rem(16), vw(32));
 
-  line-height: 1.5;
+  line-height: 1.2;
   margin-top: rem(16);
 
   @include above('desktop') {
