@@ -1,0 +1,45 @@
+@import '@/styles/shared-imports.scss';
+
+.clouds {
+  @include position-fit;
+  z-index: z('above');
+}
+
+.cloud {
+  bottom: 0;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 200%;
+
+  &.first {
+    height: 33dvh;
+    z-index: z('above') + 2;
+  }
+
+  &.second {
+    height: 62dvh;
+    z-index: z('above') + 1;
+
+    img {
+      object-position: 33% top;
+    }
+  }
+
+  &.third {
+    height: 90dvh;
+    z-index: z('above');
+
+    img {
+      object-position: 66% top;
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}

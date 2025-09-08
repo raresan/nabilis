@@ -8,6 +8,7 @@ import useScrollToSection from '@/hooks/useScrollToSection'
 import { fadeUp } from '@/motion/animations'
 
 import Swap from '@/components/ui/Swap'
+import Parallax from './Parallax'
 
 import type { IHero } from './HeroTypes'
 
@@ -29,6 +30,8 @@ const Hero = ({ data }: IHero) => {
 
   return (
     <main className={s.hero} id='home'>
+      <Parallax />
+
       <div className={s.content}>
         <motion.h1
           className={s.title}
