@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import cloud1 from '@/assets/images/cloud-1.png'
 import cloud2 from '@/assets/images/cloud-2.png'
 import cloud3 from '@/assets/images/cloud-3.png'
+import rays from '@/assets/images/rays.png'
 
 import s from './Parallax.module.scss'
 
@@ -24,32 +25,40 @@ const Parallax = () => {
   }
 
   return (
-    <div className={s.clouds} onMouseMove={onMouseMove}>
+    <div className={s.items} onMouseMove={onMouseMove}>
+      <motion.div
+        className={clsx(s.item, s.rays)}
+        animate={{ x: `${-50 + mouseX * -1}%` }}
+        transition={{ type: 'spring', stiffness: 250, damping: 45 }}
+      >
+        <Image src={rays} alt="Rays" />
+      </motion.div>
+
       {/* Foreground layer - moves least (closest to viewer) */}
       <motion.div
-        className={clsx(s.cloud, s.first)}
+        className={clsx(s.item, s.front)}
         animate={{ x: `${-50 + mouseX}%` }} // -50% centers the image, mouseX adds parallax movement
         transition={{ type: 'spring', stiffness: 300, damping: 50 }}
       >
-        <Image src={cloud1} alt='Cloud' />
+        <Image src={cloud1} alt="Cloud" />
       </motion.div>
 
       {/* Middle layer - moves 2x more than foreground */}
       <motion.div
-        className={clsx(s.cloud, s.second)}
+        className={clsx(s.item, s.middle)}
         animate={{ x: `${-50 + mouseX * 2}%` }}
         transition={{ type: 'spring', stiffness: 250, damping: 45 }}
       >
-        <Image src={cloud2} alt='Cloud' />
+        <Image src={cloud2} alt="Cloud" />
       </motion.div>
 
       {/* Background layer - moves 4x more (farthest from viewer) */}
       <motion.div
-        className={clsx(s.cloud, s.third)}
+        className={clsx(s.item, s.back)}
         animate={{ x: `${-50 + mouseX * 4}%` }}
         transition={{ type: 'spring', stiffness: 200, damping: 40 }}
       >
-        <Image src={cloud3} alt='Cloud' />
+        <Image src={cloud3} alt="Cloud" />
       </motion.div>
     </div>
   )

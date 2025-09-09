@@ -4,18 +4,19 @@
   @include max-prop(font-size, rem(11), vw(24));
 
   align-items: center;
-  background: linear-gradient(
-    90deg,
-    #2d1944 0%,
-    #3c245a 100%
-  );
+  // background: linear-gradient(
+  //   90deg,
+  //   #2d1944 0%,
+  //   #3c245a 100%
+  // );
   display: flex;
   font-family: var(--font-aristotelica-display-trial);
   height: 13dvh;
   justify-content: space-between;
   padding: rem(16);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: z('menu');
 
   @include above('desktop') {

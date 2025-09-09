@@ -24,7 +24,9 @@ const Hero = ({ data }: IHero) => {
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
+
     const target = event.currentTarget.href.split('#')[1]
+
     scrollToSection(target)
   }
 

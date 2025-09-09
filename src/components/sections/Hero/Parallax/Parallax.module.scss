@@ -1,11 +1,11 @@
 @import '@/styles/shared-imports.scss';
 
-.clouds {
+.items {
   @include position-fit;
   z-index: z('above');
 }
 
-.cloud {
+.item {
   bottom: 0;
   left: 50%;
   pointer-events: none;
@@ -13,13 +13,23 @@
   transform: translateX(-50%);
   width: 200%;
 
-  &.first {
-    height: 33dvh;
+  &.rays {
+    height: 100%;
+    width: 130%;
+    z-index: z('above') + 3;
+
+    img {
+      object-position: center 27%;
+    }
+  }
+
+  &.front {
+    height: 30dvh;
     z-index: z('above') + 2;
   }
 
-  &.second {
-    height: 62dvh;
+  &.middle {
+    height: 60dvh;
     z-index: z('above') + 1;
 
     img {
@@ -27,7 +37,7 @@
     }
   }
 
-  &.third {
+  &.back {
     height: 90dvh;
     z-index: z('above');
 
