@@ -40,9 +40,9 @@
   z-index: z('above');
 
   @include above('desktop') {
-    border-radius: vw(5);
-    height: 80dvh;
-    width: 80%;
+    border-radius: vw(40);
+    height: 76dvh;
+    width: 83%;
   }
 }
 
@@ -73,10 +73,10 @@
   }
 
   @include above('desktop') {
-    height: vw(50);
-    right: vw(30);
-    top: vw(30);
-    width: vw(50);
+    height: vw(80);
+    right: vw(45);
+    top: vw(45);
+    width: vw(80);
   }
 }
 
@@ -86,10 +86,11 @@
 }
 
 .text {
+  text-align: center;
   padding: rem(40) rem(40) rem(30);
 
   @include above('desktop') {
-    padding: vw(80) vw(80) vw(40);
+    padding: vw(65) vw(80) vw(45);
   }
 }
 
@@ -98,7 +99,6 @@
 
   color: var(--color-pink);
   font-family: var(--font-aristotelica-display-trial);
-  text-align: center;
 }
 
 .description {
@@ -109,7 +109,6 @@
 
   @include above('desktop') {
     margin-top: vw(30);
-    width: 80%;
   }
 }
 
