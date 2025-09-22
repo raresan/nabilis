@@ -55,5 +55,6 @@ body {
   @include max-prop(font-size, rem(18), vw(18));
 
   font-weight: 300;
+  font-family: var(--font-quicksand);
   color: var(--color-white);
 }

@@ -47,9 +47,34 @@
 
 .imageWrapper {
   overflow: hidden;
+  position: relative;
+
   @include above('desktop') {
     width: 50%;
+    min-height: vw(780);
   }
+}
+
+.cloudBottom {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  width: 42%;
+}
+
+.cloudTop {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scaleY(-1);
+  width: 30%;
+}
+
+.cloudLeft {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 .image {

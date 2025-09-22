@@ -5,7 +5,6 @@ import { motion } from 'motion/react'
 
 import { scaleUp } from '@/motion/animations'
 import NextImage from '@/components/core/NextImage'
-import Grain from '@/components/ui/Grain'
 import ProjectModal from '../ProjectModal'
 
 import type { IProject } from './ProjectTypes'

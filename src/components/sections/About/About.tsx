@@ -1,13 +1,16 @@
 'use client'
 
 import { motion } from 'motion/react'
+import Image from 'next/image'
 
 import NextImage from '@/components/core/NextImage'
-import Grain from '@/components/ui/Grain'
 
 import { fadeUp } from '@/motion/animations'
 
 import type { IAbout } from './AboutTypes'
+
+import cloudBottom from '@/assets/images/about-cloud-bottom.png'
+import cloudLeft from '@/assets/images/about-cloud-left.png'
 
 import s from './About.module.scss'
 
@@ -45,6 +48,10 @@ const About = ({ data }: IAbout) => {
           fill
           className={s.image}
         />
+
+        <Image src={cloudBottom} alt="Cloud bottom" className={s.cloudBottom} />
+        <Image src={cloudBottom} alt="Cloud top" className={s.cloudTop} />
+        <Image src={cloudLeft} alt="Cloud left" className={s.cloudLeft} />
       </div>
     </section>
   )

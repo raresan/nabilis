@@ -7,10 +7,10 @@ import 'wipe.css'
 import '@/styles/styles.scss'
 
 const quicksand = Quicksand({
+  variable: '--font-quicksand',
   weight: ['300', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-quicksand',
 })
 
 export const metadata: Metadata = {
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='pt-br' className={`${quicksand.variable}`}>
-      <body className={quicksand.className}>
+    <html lang='pt-br'>
+      <body className={quicksand.variable}>
         <MenuProvider>{children}</MenuProvider>
       </body>
     </html>
