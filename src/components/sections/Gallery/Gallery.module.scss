@@ -14,7 +14,7 @@
   padding: rem(50) rem(16) rem(16);
 
   @include above('desktop') {
-    padding: vw(200) 2vw vw(160);
+    padding: vw(200) vw($globalPaddingDesktop) vw(160);
     // background-size: 10%;
   }
 }
@@ -29,14 +29,15 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  grid-gap: rem(16);
+  row-gap: rem(16);
+  column-gap: rem(16);
   margin: rem(30) auto 0;
   width: 100%;
 
   @include above('desktop') {
-    grid-gap: vw(30);
+    row-gap: vw(60);
+    column-gap: vw(120);
     grid-template-columns: repeat(3, 1fr);
     margin: vw(60) auto 0;
-    max-width: 80%;
   }
 }

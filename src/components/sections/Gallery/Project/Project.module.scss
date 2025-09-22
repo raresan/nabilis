@@ -8,7 +8,7 @@
   overflow: hidden;
 
   @include above('desktop') {
-    border-radius: vw(5);
+    border-radius: vw(40);
   }
 
   &:before {
@@ -21,10 +21,6 @@
   }
 
   @include isHoverable {
-    &:hover div:first-of-type {
-      opacity: 0 !important;
-    }
-
     &:hover::before {
       opacity: 0;
       transition-duration: 0.3s;

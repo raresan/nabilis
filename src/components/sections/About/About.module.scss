@@ -14,13 +14,13 @@
 
 .text {
   position: relative;
-  padding: rem(50) rem(16);
+  padding: rem(50) rem($globalPaddingMobile);
 
   @include above('desktop') {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: vw(100);
+    padding: vw($globalPaddingDesktop);
     width: 50%;
   }
 }
