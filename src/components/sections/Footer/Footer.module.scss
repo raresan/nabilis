@@ -1,14 +1,21 @@
 @import '@/styles/shared-imports.scss';
 
 .footer {
-  padding: rem(32) rem(16);
-  position: relative;
+  // padding: rem(32) rem(16);
+  // position: relative;
+
+  @include flex-center;
 
   @include above('desktop') {
-    padding: vw(50) 2vw;
+    // padding: vw(50) 2vw;
+    height: vw($footerHeightDesktop);
+    margin-top: - vw($footerHeightDesktop);
   }
 }
 
 .copyright {
-  @include max-prop(font-size, rem(16), vw(20));
+  @include max-prop(font-size, rem(16), vw(28));
+
+  font-weight: 700;
+  text-align: center;
 }
