@@ -31,7 +31,7 @@
 
 .container {
   background-color: var(--color-white);
-  border-radius: rem(3);
+  border-radius: rem(24);
   color: var(--color-blue);
   height: 88dvh;
   overflow: hidden;
@@ -87,7 +87,7 @@
 
 .text {
   text-align: center;
-  padding: rem(40) rem(40) rem(30);
+  padding: rem(40) rem($globalPaddingMobile) rem(30);
 
   @include above('desktop') {
     padding: vw(70) vw(80) vw(50);
@@ -121,8 +121,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: rem(16);
-  padding: 0 rem(40);
+  gap: rem($globalPaddingMobile);
+  padding: 0 rem($globalPaddingMobile);
 
   @include above('desktop') {
     gap: vw(30);
@@ -131,25 +131,28 @@
 }
 
 .mediaItem {
-  height: rem(320);
+  width: 100%;
   flex: 0 0 auto;
   margin: 0;
   position: relative;
 
   @include above('desktop') {
     height: vw(450);
+    width: auto;
   }
 
   img,
   video {
-    height: 100%;
-    width: auto;
-    max-width: none;
+    width: 100%;
+    height: auto;
     display: block;
-    border-radius: rem(3);
+    border-radius: rem(24);
     object-fit: cover;
 
     @include above('desktop') {
+      height: 100%;
+      width: auto;
+      max-width: none;
       border-radius: vw(40);
     }
   }

@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: rem(3);
+  border-radius: rem(24);
   overflow: hidden;
 
   @include above('desktop') {

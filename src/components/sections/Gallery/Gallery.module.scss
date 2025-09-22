@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: rem(50) rem(16) rem(16);
+  padding: rem(50) rem($globalPaddingMobile) rem($globalPaddingMobile);
 
   @include above('desktop') {
     padding: vw(200) vw($globalPaddingDesktop) vw(70 + $footerHeightDesktop);
