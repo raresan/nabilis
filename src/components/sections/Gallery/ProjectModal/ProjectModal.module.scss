@@ -90,7 +90,7 @@
   padding: rem(40) rem(40) rem(30);
 
   @include above('desktop') {
-    padding: vw(65) vw(80) vw(45);
+    padding: vw(70) vw(80) vw(50);
   }
 }
 
@@ -108,77 +108,49 @@
   margin-top: rem(16);
 
   @include above('desktop') {
-    margin-top: vw(30);
+    margin-top: vw(40);
   }
 }
 
 .mediaWrapper {
-  height: 50dvh;
-  overflow: hidden;
   width: 100%;
-
-  user-select: none;
-  -webkit-user-select: none;
-
-  @media (hover: hover) {
-    cursor: grab;
-  }
 }
 
 .media {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   gap: rem(16);
   padding: 0 rem(40);
-  height: 100%;
-  position: relative;
-  will-change: transform;
 
   @include above('desktop') {
     gap: vw(30);
     padding: 0 vw(80);
   }
-
-  @media (hover: hover) {
-    cursor: grab;
-  }
-
-  @media (hover: none) {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
 }
 
 .mediaItem {
-  height: 100%;
+  height: rem(320);
   flex: 0 0 auto;
   margin: 0;
   position: relative;
 
-  @media (hover: none) {
-    scroll-snap-align: start;
+  @include above('desktop') {
+    height: vw(450);
   }
 
   img,
   video {
     height: 100%;
     width: auto;
+    max-width: none;
     display: block;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-drag: none;
+    border-radius: rem(3);
+    object-fit: cover;
+
+    @include above('desktop') {
+      border-radius: vw(40);
+    }
   }
 }
