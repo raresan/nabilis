@@ -10,7 +10,6 @@ const quicksand = Quicksand({
   variable: '--font-quicksand',
   weight: ['300', '700'],
   subsets: ['latin'],
-  display: 'swap',
 })
 
 export const metadata: Metadata = {
