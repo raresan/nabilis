@@ -23,8 +23,19 @@
 }
 
 .rays {
-  height: 100%;
-  width: 130%;
+  height: calc(100% - 22dvh);
+  width: 200%;
+  left: 75%;
+
+  @include above('medium') {
+    left: 60%;
+  }
+
+  @include above('desktop') {
+    height: 100%;
+    width: 130%;
+    left: 50%;
+  }
 
   img {
     object-position: center 27%;
