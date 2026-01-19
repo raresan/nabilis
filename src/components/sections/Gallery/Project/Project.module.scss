@@ -18,7 +18,7 @@
     border-radius: vw(40);
   }
 
-  &:before {
+  &::before {
     background-color: var(--color-black);
     content: '';
     inset: 0;
@@ -27,10 +27,34 @@
     transition: opacity 0.15s ease-out;
   }
 
+  &::after {
+    background:
+      radial-gradient(
+        circle at top right,
+        rgba(var(--color-black--rgb), 0.4) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(var(--color-black--rgb), 0.4) 0%,
+        transparent 40%
+      );
+    content: '';
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s ease-out;
+    z-index: z('above');
+  }
+
   @include isHoverable {
     &:hover::before {
       opacity: 0;
       transition-duration: 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
   }
 }

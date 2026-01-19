@@ -3,7 +3,16 @@
 .stars {
   @include position-fit;
 
+  opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  z-index: z('above');
+
+  @include isHoverable {
+    button:hover > & {
+      opacity: 1;
+    }
+  }
 }
 
 .star {

@@ -11,12 +11,12 @@ const Stars = () => {
     <div className={s.stars}>
       {/* Top */}
       <Star src={star1} className={s.star} delay={0} />
-      <Star src={star2} className={s.star} delay={0.3} />
-      <Star src={star2} className={s.star} delay={0.3} />
+      <Star src={star2} className={s.star} delay={0.4} />
+      <Star src={star2} className={s.star} delay={0.7} />
 
       {/* Bottom */}
-      <Star src={star2} className={s.star} delay={1.1} />
-      <Star src={star1} className={s.star} delay={0.2} />
+      <Star src={star2} className={s.star} delay={0.2} />
+      <Star src={star1} className={s.star} delay={0.5} />
     </div>
   )
 }
