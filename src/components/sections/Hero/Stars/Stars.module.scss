@@ -5,7 +5,7 @@
   left: 0;
   pointer-events: none;
   position: absolute;
-  top: vw($menuHeightMobile);
+  top: rem($menuHeightMobile);
   width: 100%;
 
   @include above('desktop') {
@@ -20,97 +20,187 @@
   &:nth-child(1) {
     left: 11%;
     top: 19%;
-    width: vw(25);
+    width: rem(14);
+
+    @include above('desktop') {
+      width: vw(25);
+    }
   }
 
   &:nth-child(2) {
     left: 13%;
     top: 28%;
-    width: vw(17);
+    width: rem(10);
+
+    @include above('desktop') {
+      width: vw(17);
+    }
   }
 
   &:nth-child(3) {
     left: 9%;
     top: 55%;
-    width: vw(12);
+    width: rem(8);
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(4) {
     left: 5%;
     top: 68%;
-    width: vw(17);
+    width: rem(10);
+
+    @include above('desktop') {
+      width: vw(17);
+    }
   }
 
   &:nth-child(5) {
     left: 15%;
     top: 82%;
-    width: vw(17);
+    width: rem(10);
+
+    @include above('desktop') {
+      width: vw(17);
+    }
   }
 
   &:nth-child(6) {
     left: 13%;
     top: 94%;
-    width: vw(12);
+    width: rem(8);
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(7) {
-    left: 24%;
+    display: none;
+    left: 8%;
     top: 73%;
-    width: vw(12);
+
+    @include above('medium') {
+      display: block;
+      left: 24%;
+    }
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(8) {
-    left: 26%;
+    display: none;
+    left: 3%;
     top: 75%;
-    width: vw(20);
+    width: rem(12);
+
+    @include above('medium') {
+      display: block;
+      left: 26%;
+    }
+
+    @include above('desktop') {
+      width: vw(20);
+    }
   }
 
   // Right side
   &:nth-child(9) {
     right: 6%;
     top: 14%;
-    width: vw(20);
+    width: rem(12);
+
+    @include above('desktop') {
+      width: vw(20);
+    }
   }
 
   &:nth-child(10) {
     right: 4%;
     top: 17%;
-    width: vw(17);
+    width: rem(10);
+
+    @include above('desktop') {
+      width: vw(17);
+    }
   }
 
   &:nth-child(11) {
     right: 5%;
     top: 22%;
-    width: vw(12);
+    width: rem(8);
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(12) {
     right: 3%;
     top: 58%;
-    width: vw(20);
+    width: rem(12);
+
+    @include above('desktop') {
+      width: vw(20);
+    }
   }
 
   &:nth-child(13) {
-    right: 22%;
+    display: none;
+    right: 6%;
     top: 69%;
-    width: vw(12);
+
+    @include above('medium') {
+      display: block;
+      right: 22%;
+    }
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(14) {
-    right: 25%;
+    display: none;
+    right: 2%;
     top: 74%;
-    width: vw(17);
+
+    @include above('medium') {
+      display: block;
+      right: 25%;
+    }
+
+    @include above('desktop') {
+      width: vw(17);
+    }
   }
 
   &:nth-child(15) {
-    right: 21%;
+    display: none;
+    right: 8%;
     top: 83%;
-    width: vw(12);
+
+    @include above('medium') {
+      display: block;
+      right: 21%;
+    }
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 
   &:nth-child(16) {
     right: 12%;
     top: 92%;
-    width: vw(20);
+    width: rem(12);
+
+    @include above('desktop') {
+      width: vw(20);
+    }
   }
 }
