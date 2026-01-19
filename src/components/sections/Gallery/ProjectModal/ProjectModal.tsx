@@ -1,3 +1,6 @@
+'use client'
+
+import { createPortal } from 'react-dom'
 import { FaTimes } from 'react-icons/fa'
 import { motion } from 'motion/react'
 import clsx from 'clsx'
@@ -16,7 +19,9 @@ const ProjectModal = ({
   isOpen,
   onClose,
 }: IProjectModal) => {
-  return (
+  if (typeof window === 'undefined') return null
+
+  return createPortal(
     <div className={clsx(s.modal, isOpen && s.open)}>
       <div className={s.overlay} onClick={onClose} />
       <div className={s.container}>
@@ -62,7 +67,8 @@ const ProjectModal = ({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 

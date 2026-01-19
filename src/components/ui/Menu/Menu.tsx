@@ -17,9 +17,10 @@ import type { IMenu } from './MenuTypes'
 import s from './Menu.module.scss'
 
 const Menu = ({ social }: IMenu) => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
   const { menuRef } = useMenuContext()
   const { scrollToSection } = useScrollToSection()
-  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
