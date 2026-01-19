@@ -1,0 +1,43 @@
+@import '@/styles/shared-imports.scss';
+
+.stars {
+  @include position-fit;
+
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+
+  // Top
+  &:nth-child(1) {
+    right: 0;
+    top: 0;
+    width: vw(20);
+  }
+
+  &:nth-child(2) {
+    right: -2%;
+    top: -1%;
+    width: vw(10);
+  }
+
+  &:nth-child(3) {
+    right: -3%;
+    top: 4%;
+    width: vw(13);
+  }
+
+  // Bottom
+  &:nth-child(4) {
+    bottom: -2%;
+    left: 0%;
+    width: vw(21);
+  }
+
+  &:nth-child(5) {
+    bottom: 3%;
+    left: 5%;
+    width: vw(12);
+  }
+}

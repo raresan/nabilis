@@ -6,6 +6,7 @@ import { motion } from 'motion/react'
 import { scaleUp } from '@/motion/animations'
 import NextImage from '@/components/core/NextImage'
 import ProjectModal from '../ProjectModal'
+import Stars from './Stars'
 
 import type { IProject } from './ProjectTypes'
 
@@ -39,18 +40,22 @@ const Project = ({
         variants={scaleUp({ scale: 0.91, delay: animationDelay })}
         viewport={{ once: true }}
       >
-        <div className={s.imageWrapper}>
-          <NextImage
-            image={thumbnail}
-            alt={thumbnail?.alt || ''}
-            fill
-            className={s.image}
-          />
+        <div className={s.projectContent}>
+          <div className={s.imageWrapper}>
+            <NextImage
+              image={thumbnail}
+              alt={thumbnail?.alt || ''}
+              fill
+              className={s.image}
+            />
+          </div>
+
+          <h3 className={s.title}>{title}</h3>
+
+          <span className={s.info}>Clique para ver detalhes</span>
         </div>
 
-        <h3 className={s.title}>{title}</h3>
-
-        <span className={s.info}>Clique para ver detalhes</span>
+        <Stars />
       </motion.button>
 
       <ProjectModal

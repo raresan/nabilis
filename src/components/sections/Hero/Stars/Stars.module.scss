@@ -1,10 +1,11 @@
 @import '@/styles/shared-imports.scss';
 
 .stars {
-  position: absolute;
-  top: vw($menuHeightMobile);
   bottom: 30dvh;
   left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: vw($menuHeightMobile);
   width: 100%;
 
   @include above('desktop') {

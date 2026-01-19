@@ -1,12 +1,18 @@
 @import '@/styles/shared-imports.scss';
 
 .project {
+  aspect-ratio: 1;
+  pointer-events: auto;
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+}
+
+.projectContent {
   border-radius: rem(24);
+  height: 100%;
   overflow: hidden;
-  pointer-events: auto;
+  position: relative;
+  width: 100%;
 
   @include above('desktop') {
     border-radius: vw(40);
