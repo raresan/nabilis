@@ -9,6 +9,7 @@ import { fadeUp } from '@/motion/animations'
 
 import Swap from '@/components/ui/Swap'
 import Parallax from '@/components/ui/Parallax'
+import Stars from './Stars'
 
 import cloud1 from '@/assets/images/hero-cloud-1.png'
 import cloud2 from '@/assets/images/hero-cloud-2.png'
@@ -45,6 +46,8 @@ const Hero = ({ data }: IHero) => {
           { image: cloud3, className: s.cloudBack, parallaxMultiplier: 4 },
         ]}
       />
+
+      <Stars />
 
       <div className={s.content}>
         <motion.h1

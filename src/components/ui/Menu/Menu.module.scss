@@ -8,7 +8,7 @@
   box-shadow: none;
   display: flex;
   font-family: var(--font-aristotelica-display-trial);
-  height: 13dvh;
+  height: vw($menuHeightMobile);
   justify-content: space-between;
   padding: rem(16);
   position: fixed;
@@ -20,6 +20,7 @@
     box-shadow 0.3s ease-out;
 
   @include above('desktop') {
+    height: vw($menuHeightDesktop);
     padding: 0 vw(40);
   }
 
