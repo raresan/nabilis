@@ -4,11 +4,8 @@
   @include max-prop(font-size, rem(11), vw(24));
 
   align-items: center;
-  // background: linear-gradient(
-  //   90deg,
-  //   #2d1944 0%,
-  //   #3c245a 100%
-  // );
+  background: transparent;
+  box-shadow: none;
   display: flex;
   font-family: var(--font-aristotelica-display-trial);
   height: 13dvh;
@@ -18,9 +15,18 @@
   top: 0;
   width: 100%;
   z-index: z('menu');
+  transition:
+    background 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 
   @include above('desktop') {
     padding: 0 vw(40);
+  }
+
+  &.scrolled {
+    background: var(--color-blue);
+    box-shadow: 0 4px 12px rgba($color: var(--color-black--rgb), $alpha: 0.6);
+
   }
 }
 

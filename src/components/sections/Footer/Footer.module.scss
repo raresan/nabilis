@@ -3,6 +3,8 @@
 .footer {
   @include flex-center;
 
+  height: rem($footerHeightMobile);
+  margin-top: - rem($footerHeightMobile);
   position: relative;
   z-index: z('footer');
 

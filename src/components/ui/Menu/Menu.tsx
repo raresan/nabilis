@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
@@ -18,6 +19,18 @@ import s from './Menu.module.scss'
 const Menu = ({ social }: IMenu) => {
   const { menuRef } = useMenuContext()
   const { scrollToSection } = useScrollToSection()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
@@ -31,7 +44,7 @@ const Menu = ({ social }: IMenu) => {
   }
 
   return (
-    <header ref={menuRef} className={s.header}>
+    <header ref={menuRef} className={clsx(s.header, isScrolled && s.scrolled)}>
       <div className={s.left}>
         <Link href='/' onClick={onClickLogo} className={s.logo}>
           <Image
