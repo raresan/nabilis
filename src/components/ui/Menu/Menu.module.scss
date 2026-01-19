@@ -31,6 +31,12 @@
   }
 }
 
+.left {
+  align-items: center;
+  display: flex;
+  gap: vw(60);
+}
+
 .logo {
   height: 70%;
   position: relative;

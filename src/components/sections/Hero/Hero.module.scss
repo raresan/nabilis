@@ -35,7 +35,7 @@
 }
 
 .title {
-  @include max-prop(font-size, rem(48), vw(110));
+  @include max-prop(font-size, rem(52), vw(110));
 
   color: var(--color-pink);
   font-family: var(--font-chubby);

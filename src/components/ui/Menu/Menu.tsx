@@ -60,15 +60,44 @@ const Menu = ({ social }: IMenu) => {
       ref={menuRef}
       className={clsx(s.header, isScrolled && s.scrolled, isOpen && s.open)}
     >
-      <Link href='/' onClick={onClickLogo} className={s.logo}>
-        <Image
-          src='/images/logo.png'
-          alt='Nabilis Logo'
-          width={150}
-          height={60}
-          className={s.logoImage}
-        />
-      </Link>
+      <div className={s.left}>
+        <Link href='/' onClick={onClickLogo} className={s.logo}>
+          <Image
+            src='/images/logo.png'
+            alt='Nabilis Logo'
+            width={150}
+            height={60}
+            className={s.logoImage}
+          />
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className={s.desktopNav}>
+          <ul className={s.menu}>
+            <li className={s.menuItem}>
+              <Link href='/#home' onClick={onClick}>
+                <Swap>Home</Swap>
+              </Link>
+            </li>
+
+            <li className={s.menuItem}>
+              <Link href='/#sobre-mim' onClick={onClick}>
+                <Swap>Sobre Mim</Swap>
+              </Link>
+            </li>
+
+            <li className={s.menuItem}>
+              <Link href='/#portfolio' onClick={onClick}>
+                <Swap>Portfólio</Swap>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className={s.desktopSocial}>
+        <Social data={social} animationDelay={0.5} />
+      </div>
 
       {/* Burger Icon - Mobile only */}
       <button
@@ -81,33 +110,6 @@ const Menu = ({ social }: IMenu) => {
         <span className={s.burgerLine} />
         <span className={s.burgerLine} />
       </button>
-
-      {/* Desktop nav */}
-      <nav className={s.desktopNav}>
-        <ul className={s.menu}>
-          <li className={s.menuItem}>
-            <Link href='/#home' onClick={onClick}>
-              <Swap>Home</Swap>
-            </Link>
-          </li>
-
-          <li className={s.menuItem}>
-            <Link href='/#sobre-mim' onClick={onClick}>
-              <Swap>Sobre Mim</Swap>
-            </Link>
-          </li>
-
-          <li className={s.menuItem}>
-            <Link href='/#portfolio' onClick={onClick}>
-              <Swap>Portfólio</Swap>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-
-      <div className={s.desktopSocial}>
-        <Social data={social} animationDelay={0.5} />
-      </div>
 
       {/* Mobile drawer */}
       <div className={clsx(s.drawer, isOpen && s.drawerOpen)}>
