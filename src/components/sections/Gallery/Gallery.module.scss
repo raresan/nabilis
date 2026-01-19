@@ -7,10 +7,11 @@
   align-items: center;
   justify-content: center;
   padding: rem(50) rem($globalPaddingMobile) rem($globalPaddingMobile);
+  position: relative;
+  overflow: hidden;
 
   @include above('desktop') {
-    padding: vw(200) vw($globalPaddingDesktop) vw(70 + $footerHeightDesktop);
-    // background-size: 10%;
+    padding: 38dvh vw($globalPaddingDesktop) vw(70 + $footerHeightDesktop);
   }
 }
 
@@ -18,6 +19,8 @@
   @include max-prop(font-size, rem(48), vw(110));
 
   font-family: var(--font-aristotelica-display-trial);
+  position: relative;
+  z-index: z('above');
 }
 
 .grid {
@@ -28,11 +31,48 @@
   column-gap: rem(16);
   margin: rem(30) auto 0;
   width: 100%;
+  position: relative;
+  pointer-events: none;
+  z-index: z('above');
 
   @include above('desktop') {
     row-gap: vw(60);
     column-gap: vw(120);
     grid-template-columns: repeat(3, 1fr);
     margin: vw(60) auto 0;
+  }
+}
+
+// Parallax elements
+.rays {
+  z-index: 3;
+}
+
+.cloudTop {
+  top: 0;
+  height: 28dvh;
+
+  img {
+    object-position: center bottom;
+  }
+}
+
+.cloudBottomFront {
+  bottom: 0;
+  height: 42%;
+  z-index: 1;
+
+  img {
+    object-position: 33% top;
+  }
+}
+
+.cloudBottomBack {
+  bottom: 0;
+  height: 70%;
+  z-index: 2;
+
+  img {
+    object-position: 66% top;
   }
 }

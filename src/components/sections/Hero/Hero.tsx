@@ -8,7 +8,12 @@ import useScrollToSection from '@/hooks/useScrollToSection'
 import { fadeUp } from '@/motion/animations'
 
 import Swap from '@/components/ui/Swap'
-import Parallax from './Parallax'
+import Parallax from '@/components/ui/Parallax'
+
+import cloud1 from '@/assets/images/hero-cloud-1.png'
+import cloud2 from '@/assets/images/hero-cloud-2.png'
+import cloud3 from '@/assets/images/hero-cloud-3.png'
+import rays from '@/assets/images/rays.png'
 
 import type { IHero } from './HeroTypes'
 
@@ -32,7 +37,14 @@ const Hero = ({ data }: IHero) => {
 
   return (
     <main className={s.hero} id='home'>
-      <Parallax />
+      <Parallax
+        rays={{ image: rays, className: s.rays }}
+        clouds={[
+          { image: cloud1, className: s.cloudFront, parallaxMultiplier: 1 },
+          { image: cloud2, className: s.cloudMiddle, parallaxMultiplier: 2 },
+          { image: cloud3, className: s.cloudBack, parallaxMultiplier: 4 },
+        ]}
+      />
 
       <div className={s.content}>
         <motion.h1

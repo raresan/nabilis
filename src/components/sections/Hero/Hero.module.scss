@@ -90,3 +90,33 @@
     }
   }
 }
+
+// Parallax elements
+.rays {
+  z-index: 3;
+}
+
+.cloudFront {
+  bottom: 0;
+  height: 30dvh;
+  z-index: 2;
+}
+
+.cloudMiddle {
+  bottom: 0;
+  height: 60dvh;
+  z-index: 1;
+
+  img {
+    object-position: 33% top;
+  }
+}
+
+.cloudBack {
+  bottom: 0;
+  height: 90dvh;
+
+  img {
+    object-position: 66% top;
+  }
+}

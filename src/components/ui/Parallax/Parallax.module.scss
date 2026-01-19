@@ -1,0 +1,32 @@
+@import '@/styles/shared-imports.scss';
+
+.parallax {
+  @include position-fit;
+  bottom: -1px;
+  top: -1px;
+  z-index: z('above');
+}
+
+.item {
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 200%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+.rays {
+  height: 100%;
+  width: 130%;
+
+  img {
+    object-position: center 27%;
+  }
+}

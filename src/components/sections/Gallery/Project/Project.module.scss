@@ -6,6 +6,7 @@
   aspect-ratio: 1;
   border-radius: rem(24);
   overflow: hidden;
+  pointer-events: auto;
 
   @include above('desktop') {
     border-radius: vw(40);

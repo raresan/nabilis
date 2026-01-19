@@ -1,4 +1,4 @@
-$z-indexes: ('modal', 'menu', 'above');
+$z-indexes: ('modal', 'menu', 'footer', 'above');
 
 @function z($name) {
   @if index($z-indexes, $name) {
