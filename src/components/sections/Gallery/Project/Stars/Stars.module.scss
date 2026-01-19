@@ -3,12 +3,13 @@
 .stars {
   @include position-fit;
 
-  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-out;
   z-index: z('above');
 
   @include isHoverable {
+    opacity: 0;
+
     button:hover > & {
       opacity: 1;
     }
@@ -22,31 +23,51 @@
   &:nth-child(1) {
     right: 0;
     top: 0;
-    width: vw(20);
+    width: rem(18);
+
+    @include above('desktop') {
+      width: vw(20);
+    }
   }
 
   &:nth-child(2) {
     right: -2%;
     top: -1%;
-    width: vw(10);
+    width: rem(10);
+
+    @include above('desktop') {
+      width: vw(10);
+    }
   }
 
   &:nth-child(3) {
     right: -3%;
     top: 4%;
-    width: vw(13);
+    width: rem(12);
+
+    @include above('desktop') {
+      width: vw(13);
+    }
   }
 
   // Bottom
   &:nth-child(4) {
     bottom: -2%;
     left: 0%;
-    width: vw(21);
+    width: rem(20);
+
+    @include above('desktop') {
+      width: vw(21);
+    }
   }
 
   &:nth-child(5) {
     bottom: 3%;
     left: 5%;
-    width: vw(12);
+    width: rem(12);
+
+    @include above('desktop') {
+      width: vw(12);
+    }
   }
 }

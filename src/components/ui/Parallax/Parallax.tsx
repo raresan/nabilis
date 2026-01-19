@@ -5,15 +5,21 @@ import { motion } from 'motion/react'
 import Image from 'next/image'
 import clsx from 'clsx'
 
+import useIsTouchDevice from '@/hooks/useIsTouchDevice'
+
 import type { IParallax } from './ParallaxTypes'
 
 import s from './Parallax.module.scss'
 
 const Parallax = ({ clouds, rays, className, zIndex }: IParallax) => {
   const [mouseX, setMouseX] = useState(0)
+  const isTouch = useIsTouchDevice()
 
   const onMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    if (isTouch) return
+
     const x = (event.clientX / window.innerWidth - 0.5) * 2
+
     setMouseX(x)
   }
 
@@ -26,7 +32,7 @@ const Parallax = ({ clouds, rays, className, zIndex }: IParallax) => {
       {rays && (
         <motion.div
           className={clsx(s.item, s.rays, rays.className)}
-          animate={{ x: `${-50 + mouseX * -1}%` }}
+          animate={{ x: isTouch ? '-50%' : `${-50 + mouseX * -1}%` }}
           transition={{ type: 'spring', stiffness: 250, damping: 45 }}
         >
           <Image src={rays.image} alt="Rays" />
@@ -40,7 +46,9 @@ const Parallax = ({ clouds, rays, className, zIndex }: IParallax) => {
           <motion.div
             key={index}
             className={clsx(s.item, cloud.className)}
-            animate={{ x: `${-50 + mouseX * multiplier}%` }}
+            animate={{
+              x: isTouch ? '-50%' : `${-50 + mouseX * multiplier}%`,
+            }}
             transition={{
               type: 'spring',
               stiffness: 300 - index * 50,
