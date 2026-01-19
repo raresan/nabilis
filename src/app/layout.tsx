@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Quicksand } from 'next/font/google'
 
 import { MenuProvider } from '@/contexts/MenuContext'
+import ScrollRestoration from '@/components/core/ScrollRestoration'
 
 import 'wipe.css'
 import '@/styles/styles.scss'
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang='pt-br'>
       <body className={quicksand.variable}>
+        <ScrollRestoration />
         <MenuProvider>{children}</MenuProvider>
       </body>
     </html>
