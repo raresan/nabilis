@@ -8,9 +8,9 @@
   box-shadow: none;
   display: flex;
   font-family: var(--font-aristotelica-display-trial);
-  height: vw($menuHeightMobile);
+  height: rem($menuHeightMobile);
   justify-content: space-between;
-  padding: rem(16);
+  padding: 0 rem($globalPaddingMobile);
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,23 +24,24 @@
     padding: 0 vw(40);
   }
 
-  &.scrolled {
+  &.scrolled,
+  &.open {
     background: var(--color-blue);
     box-shadow: 0 4px 12px rgba($color: var(--color-black--rgb), $alpha: 0.6);
   }
 }
 
-.left {
-  align-items: center;
-  display: flex;
-  gap: vw(60);
-}
-
 .logo {
-  height: 100%;
+  height: 70%;
   position: relative;
   transition: filter 0.3s ease-in-out;
-  width: vw(170);
+  width: rem(100);
+  z-index: 2;
+
+  @include above('desktop') {
+    height: 100%;
+    width: vw(170);
+  }
 
   @include isHoverable {
     &:hover {
@@ -55,15 +56,62 @@
   width: 100%;
 }
 
+// Burger icon
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: rem(5);
+  height: rem(24);
+  justify-content: center;
+  width: rem(28);
+  z-index: 2;
+
+  @include above('desktop') {
+    display: none;
+  }
+}
+
+.burgerLine {
+  background-color: var(--color-white);
+  border-radius: rem(2);
+  display: block;
+  height: rem(3);
+  transform-origin: center;
+  transition:
+    transform 0.3s ease-out,
+    opacity 0.3s ease-out;
+  width: 100%;
+
+  .burgerOpen & {
+    &:nth-child(1) {
+      transform: translateY(rem(8)) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(rem(-8)) rotate(-45deg);
+    }
+  }
+}
+
+// Desktop nav
+.desktopNav {
+  display: none;
+
+  @include above('desktop') {
+    display: block;
+  }
+}
+
 .menu {
   @include flex-center();
 
   list-style: none;
-  gap: rem(12);
-
-  @include above('desktop') {
-    gap: vw(50);
-  }
+  gap: vw(50);
 }
 
 .menuItem {
@@ -74,4 +122,76 @@
       color: var(--color-yellow);
     }
   }
+}
+
+// Desktop social
+.desktopSocial {
+  display: none;
+
+  @include above('desktop') {
+    display: block;
+  }
+}
+
+// Mobile drawer
+.drawer {
+  align-items: center;
+  background: var(--color-blue);
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  padding: 0 rem($globalPaddingMobile);
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out;
+  width: 100%;
+  z-index: z('above');
+
+  @include above('desktop') {
+    display: none;
+  }
+
+  &.drawerOpen {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: rem(64);
+  list-style: none;
+  text-align: center;
+}
+
+.mobileMenuItem {
+  font-size: rem(50);
+  transition: color 0.3s ease-out;
+
+  &:active {
+    color: var(--color-yellow);
+  }
+}
+
+// Mobile social
+.mobileSocial {
+  position: absolute;
+  bottom: rem(30);
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.mobileSocialLabel {
+  font-size: rem(14);
+  opacity: 0.7;
 }

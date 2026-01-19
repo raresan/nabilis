@@ -39,6 +39,7 @@
   line-height: 1.2;
   margin-top: rem(16);
   position: relative;
+  white-space: pre-wrap;
 
   @include above('desktop') {
     margin-top: vw(30);

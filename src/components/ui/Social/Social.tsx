@@ -20,6 +20,7 @@ const Social = ({ data, animationDelay = 0 }: ISocial) => {
         whileInView='visible'
         variants={fadeUp({ delay: animationDelay })}
         viewport={{ once: true }}
+        className={s.title}
       >
         Entre em contato
       </motion.h2>

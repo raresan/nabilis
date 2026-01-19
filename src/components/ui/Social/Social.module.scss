@@ -3,13 +3,27 @@
 .wrapper {
   align-items: center;
   display: flex;
-  gap: vw(18);
+  gap: rem(18);
+  flex-direction: column;
+
+  @include above('desktop') {
+    flex-direction: row;
+    gap: vw(18);
+  }
+}
+
+.title {
+  font-size: rem(20);
+
+  @include above('desktop') {
+    font-size: vw(24);
+  }
 }
 
 .social {
+  align-items: center;
   display: flex;
   gap: rem(6);
-  align-items: center;
   justify-content: center;
 
   @include above('desktop') {
@@ -23,12 +37,12 @@
   border-radius: 40%;
   color: var(--color-white);
   display: flex;
-  height: rem(40);
+  height: rem(50);
   justify-content: center;
-  width: rem(40);
   transition:
     color 0.3s ease-out,
     background-color 0.3s ease-out;
+  width: rem(50);
 
   @include isHoverable {
     &:hover {
